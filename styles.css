@@ -1,0 +1,2435 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    
+}
+
+:root {
+    --object-landing-point: 50vh;
+}
+
+.addScreenShakeAnimation {
+    animation: screenShake .3s 2 linear;
+}
+
+#startMenuContainer {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+#startMenuBackground {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#shikiText {
+    position: absolute;
+    width: 6vw;
+    height: 6vh;
+    top: 50%;
+    left: 4%;
+}
+
+#joshuaText {
+    position: absolute;
+    width: 10vw;
+    height: 6vh;
+    top: 50%;
+    left: 16%;
+}
+
+#beatText {
+    position: absolute;
+    width: 6vw;
+    height: 6vh;
+    top: 50%;
+    left: 32%;
+}
+
+#miniGame1WhiteFlash {
+    position: absolute;
+    background-color: white;
+    z-index: 3;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+}
+
+#shikiMainMenu {
+    position: absolute;
+    background-image: url(images/ShikiMainMenu1.png);
+    background-size: 100% 100%;
+    width: 6vw;
+    height: 30vh;
+    left: 4.2vw;
+    bottom: 8vh;
+}
+
+#joshuaMainMenu {
+    position: absolute;
+    background-image: url(images/JoshuaMainMenu1.png);
+    background-size: 100% 100%;
+    width: 6vw;
+    height: 30vh;
+    left: 18vw;
+    bottom: 8vh;
+}
+
+#beatMainMenu {
+    position: absolute;
+    background-image: url(images/BeatMainMenu1.png);
+    background-size: 100% 100%;
+    width: 6vw;
+    height: 30vh;
+    left: 32vw;
+    bottom: 8vh;
+}
+
+#shikiSelectContainer {
+    position: absolute;
+    width: 10vw;
+    height: 10vh;
+    left: 2.1vw;
+    bottom: 42vh;
+}
+
+#selectIcon1 {
+    position: absolute;
+    width: 3vw;
+    height: 6vh;
+    left: 0vw;
+    bottom: 44vh;
+    transform: rotateZ(90deg);
+    display: none;
+    animation: selectLeftIconAnimtion .3s linear alternate-reverse infinite;
+}
+
+#selectIcon2 {
+    position: absolute;
+    width: 3vw;
+    height: 6vh;
+    left: 11vw;
+    bottom: 44vh;
+    transform: rotateZ(270deg);
+    display: none;
+    animation: selectRightIconAnimtion .3s linear alternate-reverse infinite;
+}
+
+#selectIcon3 {
+    position: absolute;
+    width: 3vw;
+    height: 6vh;
+    left: 12.2vw;
+    bottom: 44vh;
+    transform: rotateZ(90deg);
+    display: none;
+    animation: selectLeftIconAnimtion .3s linear alternate-reverse infinite;
+}
+
+#selectIcon4 {
+    position: absolute;
+    width: 3vw;
+    height: 6vh;
+    left: 27vw;
+    bottom: 44vh;
+    transform: rotateZ(270deg);
+    display: none;
+    animation: selectRightIconAnimtion .3s linear alternate-reverse infinite;
+}
+
+#selectIcon5 {
+    position: absolute;
+    width: 3vw;
+    height: 6vh;
+    left: 28vw;
+    bottom: 44vh;
+    transform: rotateZ(90deg);
+    display: none;
+    animation: selectLeftIconAnimtion .3s linear alternate-reverse infinite;
+}
+
+#selectIcon6 {
+    position: absolute;
+    width: 3vw;
+    height: 6vh;
+    left: 38.6vw;
+    bottom: 44vh;
+    transform: rotateZ(270deg);
+    display: none;
+    animation: selectRightIconAnimtion .3s linear alternate-reverse infinite;
+}
+
+@keyframes selectLeftIconAnimtion {
+    0% {transform: translate(.5vw, 0) rotateZ(90deg);}
+}
+
+@keyframes selectRightIconAnimtion {
+    0% {transform: translate(-.5vw, 0) rotateZ(270deg);}
+}
+
+@keyframes joshuaMainMenuAnimation {
+    0% {background-image: url(images/JoshuaMainMenu1.png);}
+    33% {background-image: url(images/JoshuaMainMenu1.png);}
+    34% {background-image: url(images/JoshuaMainMenu2.png);}
+    66% {background-image: url(images/JoshuaMainMenu2.png);}
+    67% {background-image: url(images/JoshuaMainMenu3.png);}
+    100% {background-image: url(images/JoshuaMainMenu3.png);}
+}
+
+@keyframes shikiMainMenuAnimation {
+    0% {background-image: url(images/ShikiMainMenu1.png);}
+    33% {background-image: url(images/ShikiMainMenu1.png);}
+    34% {background-image: url(images/ShikiMainMenu2.png);}
+    66% {background-image: url(images/ShikiMainMenu2.png);}
+    67% {background-image: url(images/ShikiMainMenu3.png);}
+    100% {background-image: url(images/ShikiMainMenu3.png);}
+}
+
+@keyframes beatMainMenuAnimation {
+    0% {background-image: url(images/BeatMainMenu4.png);}
+    33% {background-image: url(images/BeatMainMenu4.png);}
+    34% {background-image: url(images/BeatMainMenu5.png);}
+    66% {background-image: url(images/BeatMainMenu5.png);}
+    67% {background-image: url(images/BeatMainMenu2.png);}
+    100% {background-image: url(images/BeatMainMenu2.png);}
+}
+
+@keyframes miniGame1WhiteFlashAnimation {
+    0% {opacity: 0;}
+    99%{z-index: 3;}
+    100% {opacity: 1; z-index: 10;}
+}
+
+#miniGame1 {
+    display: none;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+#miniGame1BackgroundContainer {
+    height: 104vh;
+    width: 104vw;
+    margin: -2vh -2vw;
+}
+
+#miniGame1Background {
+    position: relative;
+    background: url(images/fusion-background-1.png) repeat-x;
+    background-size: 100% 100%;
+    height: 100%;
+    width: 100%;
+    animation: ani .8s linear infinite;
+    overflow: hidden;
+}
+
+#neku1 {
+    position: absolute;
+    width: 40vw;
+    height: 104vh;
+    transform: translate(-100%, 0);
+    z-index: 2;
+}
+
+#neku1Shadow {
+    position: absolute;
+    width: 40vw;
+    height: 104vh;
+    transform: translate(-95%, 0);
+    z-index: 1;
+}
+
+@keyframes MoveNeku1 {
+	100%{transform: translate(-20%, 0);}
+}
+
+@keyframes MoveNeku1Shadow {
+	100%{transform: translate(-15%, 0);}
+}
+
+@keyframes MoveNeku2 {
+    0% {transform: translate(-20%, 0);}
+    100% {transform: translate(10%, 0);}
+}
+
+@keyframes MoveNeku2Shadow {
+	0% {transform: translate(-15%, 0);}
+    100% {transform: translate(25%, 0);}
+}
+
+#shiki1 {
+    position: absolute;
+    width: 40vw;
+    height: 104vh;
+    transform: translate(260%, 0);
+    z-index: 2;
+}
+
+#shiki1Shadow {
+    position: absolute;
+    width: 40vw;
+    height: 104vh;
+    transform: translate(255%, 0);
+    z-index: 1;
+}
+
+@keyframes MoveShiki1 {
+	100%{transform: translate(180%, 0);}
+}
+
+@keyframes MoveShiki2 {
+	0%{transform: translate(180%, 0);}
+    100%{transform: translate(150%, 0);}
+}
+
+@keyframes MoveShiki1Shadow {
+	100%{transform: translate(175%, 0);}
+}
+
+@keyframes MoveShiki2Shadow {
+	0%{transform: translate(175%, 0);}
+    100%{transform: translate(135%, 0);}
+}
+
+@keyframes ani{
+	0%{background-position: 0 0;}
+	100%{background-position: 100vw 0;}
+}
+
+@keyframes ani2{
+	0%{background-position: 0 0;}
+	100%{background-position: 0 -100vh;}
+}
+
+@keyframes timer {
+    0% {width: 60vw;}
+    100% {width: 0vw;}
+}
+
+#timer, #timer3 {
+    background: url(images/timerbar.png);
+    background-size: 100% 100%;
+    left: 22vw;
+    right: 22vw;
+    bottom: 95vh;
+    top: 2vh;
+    position: absolute;
+    visibility: hidden;
+    margin: auto;
+    z-index: 5;
+}
+
+#starsContainer, #starsContainer3 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#rightStars, #rightStars3 {
+    position: absolute;
+    background-image: url(images/stars1.png);
+    background-size: 100% 100%;
+    right: -2.8vw;
+    top: -50%;
+    width: 12vh;
+    height: 14vh;
+    animation: starsAnimation .5s ease-in infinite;
+}
+
+#leftStars, #leftStars3 {
+    position: absolute;
+    background-image: url(images/stars1.png);
+    background-size: 100% 100%;
+    left: -2.8vw;
+    top: -50%;
+    width: 12vh;
+    height: 14vh;
+    animation: starsAnimation .5s ease-in infinite;
+}
+
+@keyframes starsAnimation {
+    33% {background-image: url(images/stars2.png);}
+    66% {background-image: url(images/stars3.png);}
+    100% {background-image: url(images/stars1.png);}
+}
+
+#shikiMainCardContainer {
+    position: absolute;
+    width: 8.5vw;
+    height: 11.5vw;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+
+#innerMainCard {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#shikiMainCardBack {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform .1s;
+    backface-visibility: hidden;
+}
+
+#shikiMainCardBackImg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#shikiMainCardFront {
+    position: absolute;
+    width: 95%;
+    height: 100%;
+    left: 2%;
+    backface-visibility: hidden;
+    transition: transform .1s;
+    transform: rotateY(180deg);
+}
+
+#shikiMainCardFrontImg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#shikiMainCardBorder {
+    position: absolute;
+    width: 12vw;
+    height: 12vw;
+    top: 23.11%;
+    left: 49.98%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    opacity: 0;
+}
+
+#shikiMainCardBorder2 {
+    position: absolute;
+    width: 11.5vw;
+    height: 12vw;
+    top: 23%;
+    left: 49.9%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    opacity: 0;
+}
+
+#shikiMainCardBorder3 {
+    position: absolute;
+    width: 10.8vw;
+    height: 12vw;
+    top: 23%;
+    left: 49.92%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    opacity: 0;
+}
+
+@keyframes MoveBorder1 {
+    0%{visibility: visible;}
+    33%{visibility: visible;}
+    34%{visibility: hidden;}
+    66%{visibility: hidden;}
+    67%{visibility: hidden;}
+    100%{visibility: hidden;}
+}
+
+@keyframes MoveBorder2 {
+    0%{visibility: hidden;}
+    33%{visibility: hidden;}
+    34%{visibility: visible;}
+    66%{visibility: visible;}
+    67%{visibility: hidden;}
+    100%{visibility: hidden;}
+}
+
+@keyframes MoveBorder3 {
+    0%{visibility: hidden;}
+    33%{visibility: hidden;}
+    34%{visibility: hidden;}
+    66%{visibility: hidden;}
+    67%{visibility: visible;}
+    100%{visibility: visible;}
+}
+
+@keyframes MoveMainCard {
+    100%{top: 23%;}
+}
+
+@keyframes RevealMainCardBorder {
+    20%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+.MoveshikiCard1Round1Animation {
+    animation: MoveshikiCard1Round1 0.2s linear forwards;
+}
+
+#shikiCard1, #joshuaCard1, #joshuaCard2{
+    position: absolute;
+    width: 7.5vw;
+    height: 11vw;
+    top: -50%;
+    left: -50%;
+    z-index: 3;
+}
+
+#joshuaCard3, #joshuaCard4, #joshuaCard5 {
+    position: absolute;
+    width: 7.5vw;
+    height: 11vw;
+    z-index: 3;
+}
+
+#innershikiCard1, #innershikiCard2, #innershikiCard3, #innershikiCard4, #innershikiCard5, #innershikiCard6, #innerjoshuaCard1, #innerjoshuaCard2, #innerjoshuaCard3, #innerjoshuaCard4, #innerjoshuaCard5 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    perspective: 1000px;
+    animation: moveCardCircleMotion 2s linear infinite;
+}
+
+#shikiCardBack1, #shikiCardBack2, #shikiCardBack3, #shikiCardBack4, #shikiCardBack5, #shikiCardBack6, #joshuaCardBack1, #joshuaCardBack2, #joshuaCardBack3, #joshuaCardBack4, #joshuaCardBack5 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: transform .2s;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+#shikiCardBackImg1, #shikiCardBackImg2, #shikiCardBackImg3, #shikiCardBackImg4, #shikiCardBackImg5, #shikiCardBackImg6, #joshuaCardBackImg1, #joshuaCardBackImg2, #joshuaCardBackImg3, #joshuaCardBackImg4, #joshuaCardBackImg5 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#shikiCardFront1, #shikiCardFront2, #shikiCardFront3, #shikiCardFront4, #shikiCardFront5, #shikiCardFront6, #joshuaCardFront1, #joshuaCardFront2, #joshuaCardFront3, #joshuaCardFront4, #joshuaCardFront5 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transform: rotateY(-180deg);
+    transition: transform .2s;
+}
+
+#shikiCardFrontImg1, #shikiCardFrontImg2, #shikiCardFrontImg3, #shikiCardFrontImg4, #shikiCardFrontImg5, #shikiCardFrontImg6, #joshuaCardFrontImg1, #joshuaCardFrontImg2, #joshuaCardFrontImg3, #joshuaCardFrontImg4, #joshuaCardFrontImg5 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#shikiCardFrontPreview1, #shikiCardFrontPreview2, #shikiCardFrontPreview3, #shikiCardFrontPreview4, #shikiCardFrontPreview5, #shikiCardFrontPreview6{
+    position: absolute;
+    left: -9%;
+    right: -10%;
+    top: -1%;
+    bottom: -3%;
+}
+
+#shikiCardFrontPreviewImg1, #shikiCardFrontPreviewImg2, #shikiCardFrontPreviewImg3, #shikiCardFrontPreviewImg4, #shikiCardFrontPreviewImg5, #shikiCardFrontPreviewImg6 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+}
+
+#shikiCard2 {
+    position: absolute;
+    width: 7.5vw;
+    height: 11vw;
+    top: 150%;
+    left: -50%;
+    z-index: 3;
+}
+
+#shikiCard3 {
+    position: absolute;
+    width: 7.5vw;
+    height: 11vw;
+    top: 150%;
+    right: -50%;
+    z-index: 3;
+}
+
+#shikiCard4 {
+    position: absolute;
+    width: 7.5vw;
+    height: 11vw;
+    top: -50%;
+    right: -50%;
+    z-index: 3;
+}
+
+#shikiCard5 {
+    position: absolute;
+    width: 7.5vw;
+    height: 11vw;
+    top: 150%;
+    right: 50%;
+    z-index: 3;
+}
+
+#shikiCard6 {
+    position: absolute;
+    width: 7.5vw;
+    height: 11vw;
+    top: 150%;
+    right: 50%;
+    z-index: 3;
+}
+
+@keyframes MoveshikiCard1Round1 {
+    100%{top: 20%; left: 20%;}
+}
+
+@keyframes MoveshikiCard2Round1 {
+    100%{top: 65%; left: 30%;}
+}
+
+@keyframes MoveshikiCard3Round1 {
+    100%{top: 65%; right: 30%;}
+}
+
+@keyframes MoveshikiCard4Round1 {
+    100%{top: 20%; right: 20%;}
+}
+
+@keyframes MoveshikiCard1Round2 {
+    100%{top: 20%; left: 15%;}
+}
+
+@keyframes MoveshikiCard2Round2 {
+    100%{top: 55%; left: 25%;}
+}
+
+@keyframes MoveshikiCard3Round2 {
+    100%{top: 55%; right: 25%;}
+}
+
+@keyframes MoveshikiCard4Round2 {
+    100%{top: 20%; right: 15%;}
+}
+
+@keyframes MoveshikiCard5Round2 {
+    100%{top: 70%; left: 46.6%;}
+}
+
+#correctCardEffect1-1, #correctCardEffect1-2, #correctCardEffect1-3, #correctCardEffect1-4, #correctCardEffect1-5, #correctCardEffect1-6, #joshuaCorrectCardEffect1-1, #joshuaCorrectCardEffect1-2 , #joshuaCorrectCardEffect1-3, #joshuaCorrectCardEffect1-4 , #joshuaCorrectCardEffect1-5 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    top: 0%;
+    z-index: 5;
+    visibility: hidden;
+}
+
+#correctCardEffect2-1, #correctCardEffect2-2, #correctCardEffect2-3, #correctCardEffect2-4, #correctCardEffect2-5, #correctCardEffect2-6, #joshuaCorrectCardEffect2-1, #joshuaCorrectCardEffect2-2 , #joshuaCorrectCardEffect2-3, #joshuaCorrectCardEffect2-4, #joshuaCorrectCardEffect2-5 {
+    position: absolute;
+    width: 155%;
+    height: 110%;
+    left: -28%;
+    top: -4%;
+    z-index: 5;
+    visibility: hidden;
+}
+
+#correctCardEffect3-1, #correctCardEffect3-2, #correctCardEffect3-3, #correctCardEffect3-4, #correctCardEffect3-5, #correctCardEffect3-6, #joshuaCorrectCardEffect3-1, #joshuaCorrectCardEffect3-2, #joshuaCorrectCardEffect3-3, #joshuaCorrectCardEffect3-4, #joshuaCorrectCardEffect3-5 {
+    position: absolute;
+    width: 185%;
+    height: 126%;
+    left: -44%;
+    top: -12%;
+    z-index: 5;
+    visibility: hidden;
+}
+
+#correctCardEffect4-1, #correctCardEffect4-2, #correctCardEffect4-3, #correctCardEffect4-4, #correctCardEffect4-5, #correctCardEffect4-6, #joshuaCorrectCardEffect4-1, #joshuaCorrectCardEffect4-2 , #joshuaCorrectCardEffect4-3, #joshuaCorrectCardEffect4-4, #joshuaCorrectCardEffect4-5 {
+    position: absolute;
+    width: 210%;
+    height: 120%;
+    left: -53%;
+    top: -10%;
+    z-index: 5;
+    visibility: hidden;
+}
+
+#wrongCardEffect1-1, #wrongCardEffect1-2, #wrongCardEffect1-3, #wrongCardEffect1-4, #wrongCardEffect1-5, #wrongCardEffect1-6, #joshuaWrongCardEffect1-1, #joshuaWrongCardEffect1-2, #joshuaWrongCardEffect1-3, #joshuaWrongCardEffect1-4, #joshuaWrongCardEffect1-5 {
+    position: absolute;
+    background-image: linear-gradient(to right, #0066ff, #0099ff, #0066ff);
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 100%;
+    opacity: .7;
+    z-index: 6;
+    border-radius: 10%;
+}
+
+#wrongCardEffect2-1, #wrongCardEffect2-2, #wrongCardEffect2-3, #wrongCardEffect2-4, #wrongCardEffect2-5, #wrongCardEffect2-6, #joshuaWrongCardEffect2-1, #joshuaWrongCardEffect2-2 , #joshuaWrongCardEffect2-3, #joshuaWrongCardEffect2-4, #joshuaWrongCardEffect2-5 {
+    position: absolute;
+    background-color: #0066ff;
+    opacity: .4;
+    z-index: 5;
+    border-radius: 10%;
+}
+
+.addWrongCardAnimation1 {
+    animation: wrongCardAnimation1 .4s linear;
+}
+
+.addWrongCardAnimation2 {
+    animation: wrongCardAnimation2 .4s linear;
+}
+
+.shikiClassCard1
+{
+    animation: retrieveShikiCard1 0.2s linear forwards;
+}
+
+@keyframes wrongCardAnimation1 {
+    20%{top: 0%; bottom: 80%;}
+    80%{top: 80%; bottom: 0%;}
+    100%{top: 100%; bottom: 0%;}
+}
+
+@keyframes wrongCardAnimation2 {
+    0%{top: 0; bottom: 0; left: 0; right: 0;}
+    100%{top: -10%; bottom: -10%; left: -10%; right: -10%;}
+}
+
+@keyframes screenShake {
+    20%{transform: translate(1vw, 1vw);}
+    40%{transform: translate(-1vw, -1vw);}
+    60%{transform: translate(-1vw, 1vw);}
+    80%{transform: translate(1vw, -1vw);}
+    100%{transform: translate(0, 0);}
+}
+
+@keyframes moveCardCircleMotion {
+    0%{transform: rotate(0deg)translate(.3vw)rotate(0deg);}
+    100%{transform: rotate(-360deg)translate(.3vw)rotate(360deg);}
+}
+
+@keyframes retrieveShikiCard1 {
+    0%{top: 20%; left: 20%;}
+    100%{top: -50%; left: -50%;}
+}
+
+@keyframes retrieveShikiCard2 {
+    0%{top: 65%; left: 30%;}
+    100%{top: 150%; left: -50%;}
+}
+
+@keyframes retrieveShikiCard3 {
+    0%{top: 65%; right: 30%;}
+    100%{top: 150%; right: -50%;}
+}
+
+@keyframes retrieveShikiCard4 {
+    0%{top: 20%; right: 20%;}
+    100%{top: -50%; right: -50%;}
+}
+
+@keyframes retrieveShikiCard1Round2 {
+    0%{top: 20%; left: 15%;}
+    100%{top: -50%; left: -50%;}
+}
+
+@keyframes retrieveShikiCard2Round2 {
+    0%{top: 55%; left: 25%;}
+    100%{top: 150%; left: -50%;}
+}
+
+@keyframes retrieveShikiCard3Round2 {
+    0%{top: 55%; right: 25%;}
+    100%{top: 150%; right: -50%;}
+}
+
+@keyframes retrieveShikiCard4Round2 {
+    0%{top: 20%; right: 15%;}
+    100%{top: -50%; right: -50%;}
+}
+
+@keyframes retrieveShikiCard5Round2 {
+    0%{top: 70%; left: 46.6%;}
+    100%{top: 150%; right: 50%;}
+}
+
+@keyframes MoveshikiCard1Round3 {
+    0%{top: -50%; left: -50%;}
+    100%{top: 20%; left: 30%;}
+}
+
+@keyframes MoveshikiCard2Round3 {
+    0%{top: 50%; left: -50%;}
+    100%{top: 45%; left: 20%;}
+}
+
+@keyframes MoveshikiCard3Round3 {
+    0%{top: 150%; left: -50%;}
+    100%{top: 70%; left: 30%;}
+}
+
+@keyframes MoveshikiCard4Round3 {
+    0%{top: -50%; right: -50%;}
+    100%{top: 20%; right: 30%;}
+}
+
+@keyframes MoveshikiCard5Round3 {
+    0%{top: 50%; right: -50%;}
+    100%{top: 45%; right: 20%;}
+}
+
+@keyframes MoveshikiCard6Round3 {
+    0%{top: 150%; right: -50%;}
+    100%{top: 70%; right: 30%;}
+}
+
+@keyframes retrieveShikiCard1Round3 {
+    0%{top: 20%; left: 30%;}
+    100%{top: -50%; left: -50%;}
+}
+
+@keyframes retrieveShikiCard2Round3 {
+    0%{top: 45%; left: 20%;}
+    100%{top: 50%; left: -50%;}
+}
+
+@keyframes retrieveShikiCard3Round3 {
+    0%{top: 70%; left: 30%;}
+    100%{top: 150%; left: -50%;}
+}
+
+@keyframes retrieveShikiCard4Round3 {
+    0%{top: 20%; right: 30%;}
+    100%{top: -50%; right: -50%;}
+}
+
+@keyframes retrieveShikiCard5Round3 {
+    0%{top: 45%; right: 20%;}
+    100%{top: 50%; right: -50%;}
+}
+
+@keyframes retrieveShikiCard6Round3 {
+    0%{top: 70%; right: 30%;}
+    100%{top: 150%; right: -50%;}
+}
+
+#score, #score2 {
+    position: absolute;
+    top: 37%;
+    left: 41%;
+    right: 41%;
+    bottom: 37%;
+    z-index: 11;
+    pointer-events: none;
+    opacity: 0;
+}
+
+#finalscore, #joshuaFinalscore {
+    position: absolute;
+    top: 37%;
+    left: 41%;
+    right: 41%;
+    bottom: 37%;
+    z-index: 11;
+    animation: finalscoreAnimation 1s linear forwards;
+}
+
+#beatFinalscore {
+    position: absolute;
+    top: 64%;
+    left: 41%;
+    right: 41%;
+    bottom: 10%;
+    z-index: 11;
+    pointer-events: none;
+    animation: finalscoreAnimation 1s linear forwards;
+}
+
+@keyframes finalscoreAnimation {
+    100% {top: 74%; bottom: 0; left: 82%; right: 0;}
+}
+
+#scoreOutline, #scoreOutline, #scoreOutline2 {
+    position: absolute;
+    top: 37%;
+    left: 41%;
+    right: 41%;
+    bottom: 37%;
+    z-index: 12;
+    pointer-events: none;
+    opacity: 0;
+}
+
+#scoreOutlineContainer, #scoreContainer, #finalScoreContainer, #scoreOutlineContainer2, #joshuaFinalScoreContainer, #scoreContainer3, #scoreOutlineContainer3, #beatFinalScoreContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#scoreInt, #finalScoreInt, #scoreInt2, #joshuaFinalScoreInt, #scoreInt3, #beatFinalScoreInt {
+    position: absolute;
+    background-image: url(images/integer1.png);
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100%;
+}
+
+#scoreIntOutline, #scoreIntOutline2, #scoreIntOutline3 {
+    position: absolute;
+    background-image: url(images/integer1Outline.png);
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100%;
+}
+
+#mainDecimal, #finalMainDecimal, #mainDecimal2, #joshuaFinalMainDecimal, #mainDecimal3, #beatFinalMainDecimal {
+    position: absolute;
+    background-image: url(images/decimal0.png);
+    background-size: 100% 100%;
+    width: 40%;
+    height: 40%;
+    left: 52%;
+    bottom: 44%;
+}
+
+#scoreDecimalOutline, #scoreDecimalOutline2, #scoreDecimalOutline3 {
+    position: absolute;
+    background-image: url(images/decimal0Outline.png);
+    background-size: 100% 100%;
+    width: 40%;
+    height: 40%;
+    left: 52%;
+    bottom: 44%;
+}
+
+.enlargeScoreAnimation {
+    animation: enlargeScore .3s linear;
+}
+
+.RotateEnlargeScoreAnimation {
+    animation: RotateEnlargeScore .5s linear;
+}
+
+@keyframes enlargeScore {
+    0% {opacity: 1;}
+    50% {opacity: 1;}
+    100% {opacity: 0; top: 17%; left: 21%; right: 21%; bottom: 17%;}
+}
+
+@keyframes RotateEnlargeScore {
+    0% {opacity: 1; transform: rotate(0deg);}
+    20% {opacity: 1;}
+    100% {opacity: 0; top: -30%; left: -26%; right: -26%; bottom: -30%; transform: rotate(720deg);}
+}
+
+@keyframes FadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+#miniGame1EndingBackgroundContainer, #miniGame2EndingBackgroundContainer, #miniGame3EndingBackgroundContainer {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    display: none;
+}
+
+#miniGame1EndingBackground {
+    position: relative;
+    background: url(images/fusion-background-ending-1.png) repeat-x;
+    background-size: 100% 100%;
+    height: 100%;
+    width: 100%;
+    animation: ani .8s linear reverse infinite;
+    overflow: hidden;
+}
+
+#miniGame2EndingBackground {
+    position: relative;
+    background: url(images/joshua-background-ending.png) repeat-y;
+    background-size: 100% 100%;
+    height: 100%;
+    width: 100%;
+    animation: ani2 .4s linear reverse infinite;
+    overflow: hidden;
+}
+
+#miniGame3EndingBackground {
+    position: relative;
+    background: url(images/beatEndingBackground.png) repeat-y;
+    background-size: 100% 100%;
+    height: 100%;
+    width: 100%;
+    animation: ani2 .4s linear reverse infinite;
+    overflow: hidden;
+}
+
+#catSmall1 {
+    position: absolute;
+    background-image: url(images/cat1.png);
+    background-size: 100% 100%;
+    width: 10%;
+    height: 14%;
+    right: -10%;
+    z-index: 2;
+    animation: catAttack 1s linear infinite;
+}
+
+#catSmall2 {
+    position: absolute;
+    background-image: url(images/cat2.png);
+    background-size: 100% 100%;
+    width: 10%;
+    height: 14%;
+    right: -10%;
+    top: 15%;
+    z-index: 2;
+    animation: catAttack 1s linear .6s infinite;
+}
+
+#catSmall3 {
+    position: absolute;
+    background-image: url(images/cat3.png);
+    background-size: 100% 100%;
+    width: 10%;
+    height: 14%;
+    right: -10%;
+    top: 30%;
+    z-index: 2;
+    animation: catAttack 1s linear 1s infinite;
+}
+
+#catSmall4 {
+    position: absolute;
+    background-image: url(images/cat1.png);
+    background-size: 100% 100%;
+    width: 10%;
+    height: 14%;
+    right: -10%;
+    top: 45%;
+    z-index: 2;
+    animation: catAttack 1s linear .2s infinite;
+}
+
+#catSmall5 {
+    position: absolute;
+    background-image: url(images/cat2.png);
+    background-size: 100% 100%;
+    width: 10%;
+    height: 14%;
+    right: -10%;
+    top: 60%;
+    z-index: 2;
+    animation: catAttack 1s linear .8s infinite;
+}
+
+#catSmall6 {
+    position: absolute;
+    background-image: url(images/cat3.png);
+    background-size: 100% 100%;
+    width: 10%;
+    height: 14%;
+    right: -10%;
+    top: 75%;
+    z-index: 2;
+    animation: catAttack 1s linear .4s infinite;
+}
+
+@keyframes catAttack {
+    100% {transform: translate(-110vw, 0);}
+}
+
+#blueExplosion1 {
+    position: absolute;
+    background-image: url(images/blueExplosion1.png);
+    background-size: 100% 100%;
+    width: 15%;
+    height: 30%;
+    left: 20vw;
+    top: 5vh;
+    z-index: 3;
+    animation: blueExplosionAnimation .4s .1s linear infinite;
+}
+
+#blueExplosion2 {
+    position: absolute;
+    background-image: url(images/blueExplosion1.png);
+    background-size: 100% 100%;
+    width: 15%;
+    height: 30%;
+    left: 10vw;
+    top: 60vh;
+    z-index: 3;
+    animation: blueExplosionAnimation .4s .2s linear infinite;
+}
+
+#blueExplosion3 {
+    position: absolute;
+    background-image: url(images/blueExplosion1.png);
+    background-size: 100% 100%;
+    width: 15%;
+    height: 30%;
+    left: 40vw;
+    top: 45vh;
+    z-index: 3;
+    animation: blueExplosionAnimation .4s .3s linear infinite;
+}
+
+#blueExplosion4 {
+    position: absolute;
+    background-image: url(images/blueExplosion1.png);
+    background-size: 100% 100%;
+    width: 15%;
+    height: 30%;
+    left: 70vw;
+    top: 20vh;
+    z-index: 3;
+    animation: blueExplosionAnimation .4s .4s linear infinite;
+}
+
+@keyframes blueExplosionAnimation {
+    0%{background-image: url(images/blueExplosion1.png)}
+    25%{background-image: url(images/blueExplosion2.png)}
+    50%{background-image: url(images/blueExplosion3.png)}
+    75%{background-image: url();}
+}
+
+#catBig {
+    position: absolute;
+    width: 40%;
+    top: 20%;
+    right: -40%;
+    animation: catBigAnimation 2s 3.5s linear;
+    z-index: 4;
+}
+
+@keyframes catBigAnimation {
+    20% {right: 25%;}
+    60% {right: 35%;}
+    100% {right: 120%;}
+}
+
+#wolfEnemy {
+    position: absolute;
+    width: 20%;
+    top: 30%;
+    left: 10%;
+    transform: rotateY(180deg);
+    animation: wolfEnemyHit .3s steps(2) infinite;
+}
+
+@keyframes wolfEnemyHit {
+    100% {left: 5%;}
+}
+
+#miniGame1EndingWhiteFlash, #miniGame2EndingWhiteFlash, #miniGame3EndingWhiteFlash {
+    position: absolute;
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+    opacity: 1;
+    z-index: 10;
+    animation: miniGame1EndingWhiteFlashAnimation 2s linear forwards;
+}
+
+#miniGame1EndingWhiteFlash2 {
+    position: absolute;
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    z-index: 20;
+    animation: miniGame1EndingWhiteFlash2Animation 2s 7s linear forwards;
+}
+
+#miniGame2EndingWhiteFlash2 {
+    position: absolute;
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    z-index: 20;
+    animation: miniGame1EndingWhiteFlash2Animation 2s 7s linear forwards;
+}
+
+#miniGame3EndingWhiteFlash3 {
+    position: absolute;
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    z-index: 20;
+    animation: miniGame1EndingWhiteFlash2Animation 2s 7s linear forwards;
+}
+
+
+@keyframes miniGame1EndingWhiteFlashAnimation {
+    50% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+@keyframes miniGame1EndingWhiteFlash2Animation {
+    50% {opacity: 1;}
+    100% {opacity: 1;}
+}
+
+/*Minigame 2*/
+#miniGame2 {
+    display: none;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+#miniGame2BackgroundContainer, #miniGame3BackgroundContainer {
+    height: 104vh;
+    width: 104vw;
+    margin: -2vh -2vw;
+}
+
+#miniGame2Background, #miniGame3Background {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+#miniGame2BackgroundImage {
+    position: absolute;
+    background: url(images/fusion-background-1.png) repeat-x;
+    background-size: 100% 100%;
+    height: 100%;
+    width: 100%;
+    animation: ani .8s linear infinite;
+    overflow: hidden;
+}
+
+#neku2 {
+    position: absolute;
+    background-image: url(images/Neku2-1.png);
+    background-size: 100% 100%;
+    width: 30%;
+    height: 100%;
+    left: 0;
+    z-index: 2;
+}
+
+#joshua {
+    position: absolute;
+    background-image: url(images/Joshua1.png);
+    background-size: 100% 100%;
+    width: 30%;
+    height: 100%;
+    top: 2%;
+    right: 0;
+}
+
+@keyframes MoveNeku2-1 {
+    60% {left: 55%;}
+    80% {left: 55%; background-image: url(images/Neku2-2.png);}
+    100% {left: 55%; background-image: url(images/Neku2-3.png);}
+}
+
+@keyframes MoveJoshua2 {
+    60% {right: 55%;}
+    80% {right: 55%; background-image: url(images/Joshua2.png);}
+    100% {right: 55%; background-image: url(images/Joshua3.png);}
+}
+
+#timer2 {
+    background: url(images/timerbar.png);
+    background-size: 100% 100%;
+    left: 22vw;
+    right: 22vw;
+    bottom: 95vh;
+    top: 2vh;
+    position: absolute;
+    visibility: hidden;
+    margin: auto;
+    z-index: 5;
+}
+
+#starsContainer2 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#rightStars2 {
+    position: absolute;
+    background-image: url(images/stars1.png);
+    background-size: 100% 100%;
+    right: -2.8vw;
+    top: -50%;
+    width: 12vh;
+    height: 14vh;
+    animation: starsAnimation .5s ease-in infinite;
+}
+
+#leftStars2 {
+    position: absolute;
+    background-image: url(images/stars1.png);
+    background-size: 100% 100%;
+    left: -2.8vw;
+    top: -50%;
+    width: 12vh;
+    height: 14vh;
+    animation: starsAnimation .5s ease-in infinite;
+}
+
+#miniGame2WhiteFlash {
+    position: absolute;
+    background-color: white;
+    z-index: 3;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+}
+
+#miniGame3WhiteFlash {
+    position: absolute;
+    background-color: white;
+    z-index: 3;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+}
+
+@keyframes MoveNeku2-2 {
+    0% {left: 55%; background-image: url(images/Neku2-3.png);}
+    100% {width: 40%; height: 130%; left: 55%; background-image: url(images/Neku2-3.png);}
+}
+
+@keyframes MoveJoshua2-2 {
+    0% {right: 55%; background-image: url(images/Joshua3.png);}
+    100% {width: 40%; height: 130%; right: 55%; background-image: url(images/Joshua3.png);}
+}
+
+@keyframes MoveJoshuaCard1-1 {
+    100%{top: 12%; left: 46%;}
+}
+
+@keyframes MoveJoshuaCard1-2 {
+    0%{top: 150%; left: -20%;}
+    100%{top: 50%; left: 25%;}
+}
+
+@keyframes MoveJoshuaCard1-3 {
+    0%{top: 150%; right: -20%;}
+    100%{top: 50%; right: 25%;}
+}
+
+@keyframes infiniteCardRotateBack {
+    0% {transform: rotateY(180deg);}
+    50% {transform: rotateY(540deg);}
+    100%{transform: rotateY(540deg);}
+}
+
+@keyframes infiniteCardRotateFront {
+    0% {transform: rotateY(0deg);}
+    50% {transform: rotateY(360deg);}
+    100%{transform: rotateY(360deg);}
+}
+
+@keyframes flipJoshuaCardFront {
+    0% {transform: rotateY(0deg);}
+    100% {transform: rotateY(180deg);}
+}
+
+@keyframes flipJoshuaCardBack {
+    0% {transform: rotateY(180deg);}
+    100% {transform: rotateY(360deg);}
+}
+
+@keyframes flipJoshuaCardFrontWon {
+    0% {transform: rotateY(0deg);}
+    100% {transform: rotateY(180deg);}
+}
+
+@keyframes flipJoshuaCardBackWon {
+    0% {transform: rotateY(180deg);}
+    100% {transform: rotateY(360deg);}
+}
+
+@keyframes RetrieveJoshuaCard1-1 {
+    0% {top: 12%; left: 46%;}
+    100% {top: -30%; left: 46%;}
+}
+
+@keyframes RetrieveJoshuaCard1-1 {
+    0% {top: 12%; left: 46%;}
+    100% {top: -30%; left: 46%;}
+}
+
+@keyframes RetrieveJoshuaCard1-2 {
+    0% {top: 50%; left: 25%;}
+    100% {top: 150%; left: -20%;}
+}
+
+@keyframes RetrieveJoshuaCard1-3 {
+    0% {top: 50%; right: 25%;}
+    100% {top: 150%; right: -20%;}
+}
+
+@keyframes MoveJoshuaCard2-1 {
+    0% {top: -20%; left: -20%;}
+    100% {top: 20%; left: 15%;}
+}
+
+@keyframes MoveJoshuaCard2-2 {
+    0% {top: 150%; left: -20%;}
+    100% {top: 60%; left: 30%;}
+}
+
+@keyframes MoveJoshuaCard2-3 {
+    0% {top: 150%; right: -20%;}
+    100% {top: 60%; right: 30%;}
+}
+
+@keyframes MoveJoshuaCard2-4 {
+    0% {top: -20%; right: -20%;}
+    100% {top: 20%; right: 15%;}
+}
+
+@keyframes RetrieveJoshuaCard2-1 {
+    0% {top: 20%; left: 15%;}
+    100% {top: -20%; left: -20%;}
+}
+
+@keyframes RetrieveJoshuaCard2-2 {
+    0% {top: 60%; left: 30%;}
+    100% {top: 150%; left: -20%;}
+}
+
+@keyframes RetrieveJoshuaCard2-3 {
+    0% {top: 60%; right: 30%;}
+    100% {top: 150%; right: -20%;}
+}
+
+@keyframes RetrieveJoshuaCard2-4 {
+    0% {top: 20%; right: 15%;}
+    100% {top: -20%; right: -20%;}
+}
+
+@keyframes MoveJoshuaCard3-1 {
+    0% {top: -20%; left: 46%;}
+    100% {top: 15%; left: 46%;}
+}
+
+@keyframes MoveJoshuaCard3-2 {
+    0% {top: 20%; left: -20%;}
+    100% {top: 25%; left: 15%;}
+}
+
+@keyframes MoveJoshuaCard3-3 {
+    0% {top: 130%; left: -20%;}
+    100% {top: 65%; left: 32%;}
+}
+
+@keyframes MoveJoshuaCard3-4 {
+    0% {top: 130%; right: -20%;}
+    100% {top: 65%; right: 32%;}
+}
+
+@keyframes MoveJoshuaCard3-5 {
+    0% {top: -20%; right: -20%;}
+    100% {top: 25%; right: 15%;}
+}
+
+@keyframes RetrieveJoshuaCard3-1 {
+    0% {top: 15%; left: 46%;}
+    100% {top: -20%; left: 46%;}
+}
+
+@keyframes RetrieveJoshuaCard3-2 {
+    0% {top: 25%; left: 15%;}
+    100% {top: 20%; left: -20%;}
+}
+
+@keyframes RetrieveJoshuaCard3-3 {
+    0% {top: 65%; left: 32%;}
+    100% {top: 130%; left: -20%;}
+}
+
+@keyframes RetrieveJoshuaCard3-4 {
+    0% {top: 65%; right: 32%;}
+    100% {top: 130%; right: -20%;}
+}
+
+@keyframes RetrieveJoshuaCard3-5 {
+    0% {top: 25%; right: 15%;}
+    100% {top: -20%; right: -20%;}
+}
+
+@keyframes FlipOverJoshuaCardFront {
+    0% {top: 25%; right: 15%;}
+    100% {top: -20%; right: -20%;}
+}
+
+@keyframes FlipOverJoshuaCardFront {
+    0% {transform: rotateY(-180deg);}
+    70% {transform: rotateY(-180deg);}
+    100% {transform: rotateY(0deg);}
+}
+
+@keyframes FlipOverJoshuaCardBack {
+    0% {transform: rotateY(0deg);}
+    70% {transform: rotateY(0deg);}
+    100% {transform: rotateY(-180deg);}
+}
+
+#flyingJoshua {
+    position: absolute;
+    background-image: url(images/JoshuaFly1.png);
+    background-size: 100% 100%;
+    width: 12vw;
+    height: 18vw;
+    right: 30vw;
+    bottom: 0;
+    z-index: 2;
+    animation: flyingJoshuaAnimation .2s infinite, flyUp 3s linear .5s forwards, float .5s linear 7s alternate-reverse infinite;
+}
+
+#joshuaGreenCircle {
+    position: absolute;
+    background-image: url(images/greenBall1.png);
+    background-size: 100% 100%;
+    width: 14vw;
+    height: 14vw;
+    right: 30vw;
+    bottom: 4vw;
+    z-index: 1;
+    animation: joshuaGreenCirle .6s infinite, flyUp 3s linear .5s forwards, float .5s linear 7s alternate-reverse infinite;
+}
+
+@keyframes joshuaGreenCirle {
+    0% {width: 10vw; height: 10vw; right: 30vw; bottom: 4vw; background-image: url(images/greenBall1.png);}
+    24% {width: 10vw; height: 10vw; right: 30vw; bottom: 4vw; background-image: url(images/greenBall1.png);}
+    25% {width: 14vw; height: 14vw; right: 28vw; bottom: 2vw; background-image: url(images/greenBall2.png);}
+    49% {width: 14vw; height: 14vw; right: 28vw; bottom: 2vw; background-image: url(images/greenBall2.png);}
+    50% {width: 15vw; height: 15vw; right: 27.5vw; bottom: 1.5vw; background-image: url(images/greenBall3.png);}
+    74% {width: 15vw; height: 15vw; right: 27.5vw; bottom: 1.5vw; background-image: url(images/greenBall3.png);}
+    75% {width: 15vw; height: 15vw; right: 27.5vw; bottom: 1.5vw; background-image: url(images/greenBall4.png);}
+    100% {width: 15vw; height: 15vw; right: 27.5vw; bottom: 1.5vw; background-image: url(images/greenBall4.png);}
+}
+
+@keyframes flyingJoshuaAnimation {
+    0%{background-image: url(images/JoshuaFly1.png);}
+    49%{background-image: url(images/JoshuaFly1.png);}
+    50%{background-image: url(images/JoshuaFly2.png);}
+    100%{background-image: url(images/JoshuaFly2.png);}
+}
+
+#flyingNeku {
+    position: absolute;
+    background-image: url(images/nekuFlying1.png);
+    background-size: 100% 100%;
+    width: 12vw;
+    height: 18vw;
+    left: 30vw;
+    bottom: 0;
+    z-index: 2;
+    animation: flyingNekuAnimation .2s infinite, flyUpNeku 3s linear .5s forwards, nekuFloat .5s linear 7s alternate-reverse infinite;;
+}
+
+#nekuGreenCircle {
+    position: absolute;
+    background-image: url(images/greenBall1.png);
+    background-size: 100% 100%;
+    width: 14vw;
+    height: 14vw;
+    left: 30vw;
+    bottom: 4vw;
+    z-index: 1;
+    animation: nekuGreenCirle .6s infinite, flyUpNeku 3s linear .5s forwards, float .5s linear 7s alternate-reverse infinite;;
+}
+
+@keyframes nekuGreenCirle {
+    0% {width: 10vw; height: 10vw; left: 30vw; bottom: 4vw; background-image: url(images/greenBall1.png);}
+    24% {width: 10vw; height: 10vw; left: 30vw; bottom: 4vw; background-image: url(images/greenBall1.png);}
+    25% {width: 14vw; height: 14vw; left: 28vw; bottom: 2vw; background-image: url(images/greenBall2.png);}
+    49% {width: 14vw; height: 14vw; left: 28vw; bottom: 2vw; background-image: url(images/greenBall2.png);}
+    50% {width: 15vw; height: 15vw; left: 27.5vw; bottom: 1.5vw; background-image: url(images/greenBall3.png);}
+    74% {width: 15vw; height: 15vw; left: 27.5vw; bottom: 1.5vw; background-image: url(images/greenBall3.png);}
+    75% {width: 15vw; height: 15vw; left: 27.5vw; bottom: 1.5vw; background-image: url(images/greenBall4.png);}
+    100% {width: 15vw; height: 15vw; left: 27.5vw; bottom: 1.5vw; background-image: url(images/greenBall4.png);}
+}
+
+@keyframes flyingNekuAnimation {
+    0%{background-image: url(images/nekuFlying1.png);}
+    49%{background-image: url(images/nekuFlying1.png);}
+    50%{background-image: url(images/nekuFlying2.png);}
+    100%{background-image: url(images/nekuFlying2.png);}
+}
+
+@keyframes flyUp {
+    100% {transform: translate(0, -40vh);}
+}
+
+@keyframes float {
+    0% {transform: translate(0, -40vh);}
+    20% {transform: translate(0, -40vh);}
+    80% {transform: translate(0, -39vh);}
+    100% {transform: translate(0, -39vh);}
+}
+
+@keyframes nekuFloat {
+    0% {transform: translate(0, -40vh) rotateY(180deg);}
+    20% {transform: translate(0, -40vh) rotateY(180deg);}
+    80% {transform: translate(0, -39vh) rotateY(180deg);}
+    100% {transform: translate(0, -39vh) rotateY(180deg);}
+}
+
+@keyframes flyUpNeku {
+    0% {transform: translate(0, 0) rotateY(180deg);}
+    100% {transform: translate(0, -40vh) rotateY(180deg);}
+}
+
+#greenStars {
+    position: absolute;
+    background-image: url(images/greenStars1.png);
+    background-size: 100% 100%;
+    width: 25vw;
+    height: 6vw;
+    left: 37vw;
+    bottom: 6vw;
+    z-index: 1;
+    animation: greenStarsAnimation .3s infinite, flyUp 3s linear .5s forwards, float .5s linear 7s alternate-reverse infinite;
+}
+
+@keyframes greenStarsAnimation {
+    0%{background-image: url(images/greenStars1.png);}
+    49%{background-image: url(images/greenStars1.png);}
+    50%{background-image: url(images/greenStars2.png);}
+    100%{background-image: url(images/greenStars2.png);}
+}
+
+#joshuaObject1 {
+    position: absolute;
+    width: 12vw;
+    top: -40vh;
+    left: 10vw;
+    animation: joshuaObjectFallStraightDown .8s linear 1.5s;
+}
+
+#joshuaObject1-2 {
+    position: absolute;
+    width: 12vw;
+    top: -40vh;
+    right: 10vw;
+    animation: objectAnimation 1s linear 1.9s;
+}
+
+#joshuaObject2 {
+    position: absolute;
+    width: 10vw;
+    top: -40vh;
+    left: 33vw;
+    animation: joshuaObjectFallStraightDown .8s linear 2.1s;
+}
+
+#joshuaObject3 {
+    position: absolute;
+    width: 14vw;
+    top: -40vh;
+    left: 30vw;
+    animation: objectAnimation 1s linear 2.5s;
+}
+
+#joshuaObject3-2 {
+    position: absolute;
+    width: 14vw;
+    top: -40vh;
+    right: 30vw;
+    animation: joshuaObjectFallStraightDown .8s linear 2.9s;
+}
+
+#joshuaObject4 {
+    position: absolute;
+    width: 19vw;
+    top: -40vh;
+    left: 0;
+    animation: joshuaObjectFallStraightDown .8s linear 3.3s;
+}
+
+#joshuaObject5 {
+    position: absolute;
+    width: 18vw;
+    top: -50vh;
+    left: 30vw;
+    animation: joshuaObjectFallStraightDown .8s linear 3.7s;
+}
+
+#joshuaObject5-1 {
+    position: absolute;
+    width: 18vw;
+    top: -50vh;
+    right: 30vw;
+    animation: objectAnimation 1s linear 4.1s;
+}
+
+#joshuaObject6 {
+    position: absolute;
+    width: 18vw;
+    top: -50vh;
+    left: 20vw;
+    animation: joshuaObjectFallStraightDown .8s linear 4.5s;
+}
+
+#joshuaObject6-1 {
+    position: absolute;
+    width: 18vw;
+    top: -50vh;
+    right: 23vw;
+    animation: joshuaObjectFallStraightDown .8s linear 4.9s;
+}
+
+#joshuaObject7 {
+    position: absolute;
+    width: 20vw;
+    top: -55vh;
+    left: 20;
+    animation: objectAnimation 1s linear 5.3s;
+}
+
+#joshuaObject8 {
+    position: absolute;
+    width: 35vw;
+    top: -45vh;
+    left: 10vw;
+    animation: objectAnimation 1s linear 5.9s;
+}
+
+#joshuaObject9 {
+    position: absolute;
+    width: 40vw;
+    top: -45vh;
+    right: 10vw;
+    animation: objectAnimation 1s linear 6.1s;
+}
+
+@keyframes objectAnimation {
+    30% {transform: translate(0, 90vh);}
+    31% {visibility: hidden;}
+    36% {visibility: hidden;}
+    37% {visibility: visible;}
+    42% {visibility: visible;}
+    43% {visibility: hidden;}
+    48% {visibility: hidden;}
+    53% {visibility: visible;}
+    50% {transform: translate(0, 60vh);}
+    58% {visibility: visible;}
+    59% {visibility: hidden;}
+    62% {visibility: hidden;}
+    63% {visibility: visible;}
+    66% {visibility: visible;}
+    67% {visibility: hidden;}
+    70% {visibility: hidden;}
+    71% {visibility: visible;}
+    74% {visibility: visible;}
+    76% {visibility: hidden;}
+    79% {visibility: hidden;}
+    80% {visibility: visible;}
+    83% {visibility: visible;}
+    84% {visibility: hidden;}
+    87% {visibility: hidden;}
+    88% {visibility: visible;}
+    91% {visibility: visible;}
+    92% {visibility: hidden;}
+    95% {visibility: hidden;}
+    96% {visibility: visible;}
+    99% {visibility: visible;}
+    100% {transform: translate(0, 90vh);}
+}
+
+@keyframes joshuaObjectFallStraightDown {
+    100% {transform: translate(0, 140vh);}
+}
+
+#frog {
+    position: absolute;
+    background-image: url(images/frog1.png);
+    background-size: 100% 100%;
+    width: 7vw;
+    height: 7vw;
+    right: 20vw;
+    bottom: 16vh;
+    animation: frog 1s linear infinite;
+}
+
+#frog2 {
+    position: absolute;
+    background-image: url(images/frog1.png);
+    background-size: 100% 100%;
+    width: 7vw;
+    height: 7vw;
+    right: 50vw;
+    bottom: 8vh;
+    animation: frog 1s linear .5s infinite;
+}
+
+#frog3 {
+    position: absolute;
+    background-image: url(images/frog1.png);
+    background-size: 100% 100%;
+    transform: rotateY(180deg);
+    width: 7vw;
+    height: 7vw;
+    left: 20vw;
+    bottom: 16vh;
+    animation: frog 1s linear infinite;
+}
+
+@keyframes frog {
+    0% {background-image: url(images/frog1.png);}
+    49% {background-image: url(images/frog1.png);}
+    50% {background-image: url(images/frog2.png);}
+    100% {background-image: url(images/frog2.png);}
+}
+
+/*Minigame 3*/
+#miniGame3 {
+    display: none;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+#miniGame3BackgroundImage {
+    position: absolute;
+    background: url(images/fusion-background-1.png) repeat-x;
+    background-size: 100% 100%;
+    height: 100%;
+    width: 100%;
+    animation: ani .8s linear infinite;
+    overflow: hidden;
+}
+
+#neku3 {
+    position: absolute;
+    background-image: url(images/neku3.png);
+    background-size: 100% 100%;
+    width: 45%;
+    height: 150%;
+    right: 0;
+    top: -42%;
+    z-index: 2;
+    animation: neku3 2s linear forwards;
+}
+
+#beat {
+    position: absolute;
+    background-image: url(images/beat.png);
+    background-size: 100% 100%;
+    width: 45%;
+    height: 150%;
+    left: -10%;
+    top: 30%;
+    z-index: 1;
+    animation: beatAnimation 2s linear forwards;
+}
+
+@keyframes neku3Move {
+    0% {transform: translate(-50%, 30%);}
+    100% {transform: translate(-65%, 45%);}
+}
+
+@keyframes beatMove {
+    0% {transform: translate(60%, -20%);}
+    100% {transform: translate(75%, -5%);}
+}
+
+@keyframes neku3 {
+    45% {transform: translate(-150%, 20%);}
+    55% {transform: translate(-170%, 40%);}
+    100% {transform: translate(-50%, 30%);}
+}
+
+@keyframes beatAnimation {
+    45% {transform: translate(150%, -40%);}
+    55% {transform: translate(160%, -20%);}
+    100% {transform: translate(60%, -20%);}
+}
+
+#beatCard0{
+    position: absolute;
+    width: 9vw;
+    height: 30vh;
+    top: 25%;
+    right: -12.5vw;
+    z-index: 3;
+}
+
+#beatCard1 {
+    position: absolute;
+    width: 9vw;
+    height: 30vh;
+    top: 25%;
+    right: -5vw;
+    z-index: 3;
+}
+
+#beatCard2 {
+    position: absolute;
+    width: 9vw;
+    height: 30vh;
+    top: 25%;
+    right: 2.5vw;
+    z-index: 3;
+}
+
+#beatCard3 {
+    position: absolute;
+    width: 9vw;
+    height: 30vh;
+    top: 25%;
+    right: 10vw;
+    z-index: 3;
+}
+
+#beatCard4 {
+    position: absolute;
+    width: 9vw;
+    height: 30vh;
+    top: 25%;
+    right: 17.5vw;
+    z-index: 3;
+}
+
+#beatCard5 {
+    position: absolute;
+    width: 9vw;
+    height: 30vh;
+    top: 25%;
+    right: 25vw;
+    z-index: 3;
+}
+
+#beatCard6 {
+    position: absolute;
+    width: 9vw;
+    height: 30vh;
+    top: 25%;
+    right: 32.5vw;
+    z-index: 3;
+}
+
+#beatCard7 {
+    position: absolute;
+    width: 9vw;
+    height: 30vh;
+    top: 25%;
+    right: 40vw;
+    z-index: 3;
+}
+
+#beatCard8 {
+    position: absolute;
+    width: 9vw;
+    height: 30vh;
+    top: 25%;
+    right: 47.5vw;
+    z-index: 3;
+}
+
+#beatCard9 {
+    position: absolute;
+    width: 9vw;
+    height: 30vh;
+    top: 25%;
+    right: 55vw;
+    z-index: 3;
+}
+
+#beatCard10 {
+    position: absolute;
+    width: 9vw;
+    height: 30vh;
+    top: 25%;
+    right: 62.5vw;
+    z-index: 3;
+}
+
+#beatCard11 {
+    position: absolute;
+    width: 9vw;
+    height: 30vh;
+    top: 25%;
+    right: 70vw;
+    z-index: 3;
+}
+
+#beatCard12 {
+    position: absolute;
+    width: 9vw;
+    height: 30vh;
+    top: 25%;
+    right: 77.5vw;
+    z-index: 3;
+}
+
+#beatCard13 {
+    position: absolute;
+    width: 9vw;
+    height: 30vh;
+    top: 25%;
+    right: 85vw;
+    z-index: 3;
+}
+
+#beatCard14 {
+    position: absolute;
+    width: 9vw;
+    height: 30vh;
+    top: 25%;
+    right: 92.5vw;
+    z-index: 3;
+}
+
+#beatCard15 {
+    position: absolute;
+    width: 9vw;
+    height: 30vh;
+    top: 25%;
+    right: 100vw;
+    z-index: 3;
+}
+
+#innerBeatCard0, #innerBeatCard1 , #innerBeatCard2 , #innerBeatCard3 , #innerBeatCard4 , #innerBeatCard5 , #innerBeatCard6 , #innerBeatCard7 , #innerBeatCard8 , #innerBeatCard9 , #innerBeatCard10 , #innerBeatCard11, #innerBeatCard12, #innerBeatCard13, #innerBeatCard14, #innerBeatCard15 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    perspective: 1000px;
+}
+
+#beatCardBack0, #beatCardBack1 , #beatCardBack2 , #beatCardBack3 , #beatCardBack4 , #beatCardBack5 , #beatCardBack6 , #beatCardBack7 , #beatCardBack8 , #beatCardBack9 , #beatCardBack10 , #beatCardBack11, #beatCardBack12, #beatCardBack13, #beatCardBack14, #beatCardBack15 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: transform .2s;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+#beatCardBackImg0, #beatCardBackImg1, #beatCardBackImg2, #beatCardBackImg3, #beatCardBackImg4, #beatCardBackImg5, #beatCardBackImg6, #beatCardBackImg7, #beatCardBackImg8, #beatCardBackImg9, #beatCardBackImg10, #beatCardBackImg11, #beatCardBackImg12, #beatCardBackImg13, #beatCardBackImg14, #beatCardBackImg15 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#beatCardFront0, #beatCardFront1, #beatCardFront2, #beatCardFront3, #beatCardFront4, #beatCardFront5, #beatCardFront6, #beatCardFront7, #beatCardFront8, #beatCardFront9, #beatCardFront10, #beatCardFront11, #beatCardFront12, #beatCardFront13, #beatCardFront14, #beatCardFront15 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transform: rotateY(-180deg);
+    transition: transform .2s;
+}
+
+#beatCardFrontImg0, #beatCardFrontImg1, #beatCardFrontImg2, #beatCardFrontImg3, #beatCardFrontImg4, #beatCardFrontImg5, #beatCardFrontImg6, #beatCardFrontImg7, #beatCardFrontImg8, #beatCardFrontImg9, #beatCardFrontImg10, #beatCardFrontImg11, #beatCardFrontImg12, #beatCardFrontImg13, #beatCardFrontImg14, #beatCardFrontImg15{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes beatCardAnimation1 {
+    0% {right: -15vw;}
+}
+
+@keyframes beatCardAnimation2 {
+    0% {right: -15vw;}
+    100% {right: -15vw;}
+}
+
+@keyframes flipBeatCardFront {
+    100% {transform: rotateY(0deg);}
+}
+
+@keyframes flipBeatCardBack {
+    100% {transform: rotateY(180deg);}
+}
+
+#beatCorrectCardEffect1-0, #beatCorrectCardEffect1-1, #beatCorrectCardEffect1-2, #beatCorrectCardEffect1-3, #beatCorrectCardEffect1-4, #beatCorrectCardEffect1-5, #beatCorrectCardEffect1-6, #beatCorrectCardEffect1-7, #beatCorrectCardEffect1-8, #beatCorrectCardEffect1-9, #beatCorrectCardEffect1-10, #beatCorrectCardEffect1-11, #beatCorrectCardEffect1-12, #beatCorrectCardEffect1-13, #beatCorrectCardEffect1-14, #beatCorrectCardEffect1-15 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    top: 0%;
+    z-index: 5;
+    visibility: hidden;
+}
+
+#beatCorrectCardEffect2-0, #beatCorrectCardEffect2-1, #beatCorrectCardEffect2-2, #beatCorrectCardEffect2-3, #beatCorrectCardEffect2-4, #beatCorrectCardEffect2-5, #beatCorrectCardEffect2-6, #beatCorrectCardEffect2-7, #beatCorrectCardEffect2-8, #beatCorrectCardEffect2-9, #beatCorrectCardEffect2-10, #beatCorrectCardEffect2-11, #beatCorrectCardEffect2-12, #beatCorrectCardEffect2-13, #beatCorrectCardEffect2-14 #beatCorrectCardEffect2-15 {
+    position: absolute;
+    width: 155%;
+    height: 110%;
+    left: -28%;
+    top: -4%;
+    z-index: 5;
+    visibility: hidden;
+}
+
+#beatCorrectCardEffect3-0, #beatCorrectCardEffect3-1, #beatCorrectCardEffect3-2, #beatCorrectCardEffect3-3, #beatCorrectCardEffect3-4, #beatCorrectCardEffect3-5, #beatCorrectCardEffect3-6, #beatCorrectCardEffect3-7, #beatCorrectCardEffect3-8, #beatCorrectCardEffect3-9, #beatCorrectCardEffect3-10, #beatCorrectCardEffect3-11, #beatCorrectCardEffect3-12, #beatCorrectCardEffect3-13, #beatCorrectCardEffect3-14, #beatCorrectCardEffect3-15 {
+    position: absolute;
+    width: 185%;
+    height: 126%;
+    left: -44%;
+    top: -12%;
+    z-index: 5;
+    visibility: hidden;
+}
+
+#beatCorrectCardEffect4-0, #beatCorrectCardEffect4-1, #beatCorrectCardEffect4-2, #beatCorrectCardEffect4-3, #beatCorrectCardEffect4-4, #beatCorrectCardEffect4-5, #beatCorrectCardEffect4-6, #beatCorrectCardEffect4-7, #beatCorrectCardEffect4-8, #beatCorrectCardEffect4-9, #beatCorrectCardEffect4-10, #beatCorrectCardEffect4-11, #beatCorrectCardEffect4-12, #beatCorrectCardEffect4-13, #beatCorrectCardEffect4-14, #beatCorrectCardEffect4-15 {
+    position: absolute;
+    width: 210%;
+    height: 120%;
+    left: -53%;
+    top: -10%;
+    z-index: 5;
+    visibility: hidden;
+}
+
+@keyframes beatCardMoveUpandDown {
+    0% {top: 35%}
+    100% {top: 20%}
+}
+
+@keyframes selectedBeatCardAnimation {
+    100% {top: -40vh;}
+}
+
+.kaka {
+    animation: selectedBeatCardAnimation .5s linear;
+}
+
+.moveCardsLeft {
+    animation: moveCardsLeftAnimation .5s linear;
+}
+
+#score3 {
+    position: absolute;
+    top: 64%;
+    left: 41%;
+    right: 41%;
+    bottom: 10%;
+    z-index: 11;
+    pointer-events: none;
+    opacity: 0;
+}
+
+#scoreOutline3 {
+    position: absolute;
+    top: 64%;
+    left: 41%;
+    right: 41%;
+    bottom: 10%;
+    z-index: 12;
+    pointer-events: none;
+    opacity: 0;
+}
+
+#beatChain1 {
+    position: absolute;
+    width: 120vw;
+    height: 10vh;
+    left: -130%;;
+    top: 100%;
+    transform: rotateZ(-10deg);
+    animation: beatChain1Animation .4s linear 2s forwards;
+}
+
+#beatChain2 {
+    position: absolute;
+    width: 120vw;
+    height: 10vh;
+    left: -130%;
+    top: -35%;
+    transform: rotateZ(20deg);
+    animation: beatChain2Animation .4s linear 2.1s forwards;
+}
+
+#beatChain3 {
+    position: absolute;
+    width: 120vw;
+    height: 10vh;
+    left: -65%;
+    top: -150%;
+    transform: rotateZ(70deg);
+    animation: beatChain3Animation .4s linear 2.2s forwards;
+}
+
+#beatChain4 {
+    position: absolute;
+    width: 120vw;
+    height: 10vh;
+    left: 60%;
+    top: -150%;
+    transform: rotateZ(125deg);
+    animation: beatChain4Animation .4s linear 2.3s forwards;
+}
+
+@keyframes beatChain1Animation {
+    100% {left: -10%; top: 60%;}
+}
+
+@keyframes beatChain2Animation {
+    100% {left: -10%; top: 50%;}
+}
+
+@keyframes beatChain3Animation {
+    100% {left: -30%; top: 50%;}
+}
+
+@keyframes beatChain4Animation {
+    100% {left: -5%; top: 50%;}
+}
+
+#skateNeku1 {
+    position: absolute;
+    background-image: url(images/skateNeku1.png);
+    background-size: 100% 100%;
+    width: 6vw;
+    height: 34vh;
+    left: 72%;
+    top: -40%;
+    z-index: 3;
+    /*animation: skateNeku1 .8s linear 2.8s;*/
+}
+
+#skateNeku1Container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes skateNeku1 {
+    100% {top: 100%; left: 27%;}
+}
+@keyframes skateNeku1-2 {
+    100% {top: 100%; left: 27%;}
+}
+@keyframes skateNeku1-3 {
+    100% {top: 100%; left: 27%;}
+}
+@keyframes skateNeku1-4 {
+    100% {top: 100%; left: 27%;}
+}
+@keyframes skateNeku1-5 {
+    100% {top: 100%; left: 27%;}
+}
+
+#skateNekuEffect1 {
+    position: absolute;
+    background-image: url(images/skateNekuEffect1.png);
+    background-size: 100% 100%;
+    width: 20vw;
+    height: 50vh;
+    left: -80%;
+    top: -30%;
+    animation: skateNekuEffect1 .5s linear infinite;
+}
+
+@keyframes skateNekuEffect1 {
+    0% {background-image: url(images/skateNekuEffect1.png);}
+    50% {background-image: url(images/skateNekuEffect1.png);}
+    51% {background-image: url(images/skateNekuEffect1-2.png);}
+    100% {background-image: url(images/skateNekuEffect1-2.png);}
+}
+
+#skateNeku2 {
+    position: absolute;
+    background-image: url(images/skateNeku2.png);
+    background-size: 100% 100%;
+    width: 12vw;
+    height: 20vh;
+    left: -20%;
+    top: 70%;
+    transform: rotateY(180deg);
+    z-index: 3;
+    /*animation: skateNeku2 .8s linear 3.6s;*/
+}
+
+#skateNekuEffect2 {
+    position: absolute;
+    background-image: url(images/skateNekuEffect2.png);
+    background-size: 100% 100%;
+    width: 20vw;
+    height: 50vh;
+    left: -10%;
+    top: -80%;
+    transform: rotateY(180deg) ;
+    animation: skateNekuEffect2 .4s linear infinite;
+}
+
+@keyframes skateNeku2 {
+    100% {top: 25%; left: 110%;}
+}
+@keyframes skateNeku2-2 {
+    100% {top: 25%; left: 110%;}
+}
+@keyframes skateNeku2-3 {
+    100% {top: 25%; left: 110%;}
+}
+@keyframes skateNeku2-4 {
+    100% {top: 25%; left: 110%;}
+}
+@keyframes skateNeku2-5 {
+    100% {top: 25%; left: 110%;}
+}
+
+@keyframes skateNekuEffect2 {
+    0% {background-image: url(images/skateNekuEffect2.png); top: -80%;}
+    50% {background-image: url(images/skateNekuEffect2.png); top: -80%;}
+    51% {background-image: url(images/skateNekuEffect2-2.png); top: -30%;}
+    100% {background-image: url(images/skateNekuEffect2-2.png); top: -30%;}
+}
+
+#skateBeat1 {
+    position: absolute;
+    background-image: url(images/skateBeat1.png);
+    background-size: 100% 100%;
+    width: 13vw;
+    height: 33vh;
+    left: 105%;
+    top: 65%;
+    z-index: 3;
+    /*animation: skateBeat1 .8s linear 4.4s;*/
+}
+
+#skateBeat1Container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#skateBeatEffect1 {
+    position: absolute;
+    background-image: url(images/skateBeatEffect1-2.png);
+    background-size: 100% 100%;
+    width: 20vw;
+    height: 50vh;
+    left: -5%;
+    top: -10%;
+    animation: skateBeatEffect1 .5s linear infinite;
+}
+
+@keyframes skateBeat1 {
+    100% {top: -23%; left: -20%;}
+}
+@keyframes skateBeat1-2 {
+    100% {top: -23%; left: -20%;}
+}
+@keyframes skateBeat1-3 {
+    100% {top: -23%; left: -20%;}
+}
+@keyframes skateBeat1-4 {
+    100% {top: -23%; left: -20%;}
+}
+@keyframes skateBeat1-5 {
+    100% {top: -23%; left: -20%;}
+}
+
+@keyframes skateBeatEffect1 {
+    0% {background-image: url(images/skateBeatEffect1.png); top: -10%;}
+    50% {background-image: url(images/skateBeatEffect1.png); top: -10%;}
+    51% {background-image: url(images/skateBeatEffect1-2.png); top: 5%;}
+    100% {background-image: url(images/skateBeatEffect1-2.png); top: 5%;}
+}
+
+#skateBeat2 {
+    position: absolute;
+    background-image: url(images/skateBeat2.png);
+    background-size: 100% 100%;
+    width: 11vw;
+    height: 28vh;
+    left: 13%;
+    top: -40%;
+    z-index: 3;
+    /*animation: skateBeat2 .8s linear 5.2s;*/
+}
+
+#skateBeat2Container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#skateBeatEffect2 {
+    position: absolute;
+    background-image: url(images/skateBeatEffect2.png);
+    background-size: 100% 100%;
+    width: 20vw;
+    height: 50vh;
+    left: -65%;
+    top: -55%;
+    animation: skateBeatEffect2 .5s linear infinite;
+}
+
+@keyframes skateBeat2 {
+    100% {top: 115%; left: 38%;}
+}
+@keyframes skateBeat2-2 {
+    100% {top: 115%; left: 38%;}
+}
+@keyframes skateBeat2-3 {
+    100% {top: 115%; left: 38%;}
+}
+@keyframes skateBeat2-4 {
+    100% {top: 115%; left: 38%;}
+}
+@keyframes skateBeat2-5 {
+    100% {top: 115%; left: 38%;}
+}
+
+@keyframes skateBeatEffect2 {
+    0% {background-image: url(images/skateBeatEffect2.png);}
+    50% {background-image: url(images/skateBeatEffect2.png);}
+    51% {background-image: url(images/skateBeatEffect2-2.png);}
+    100% {background-image: url(images/skateBeatEffect2-2.png);}
+}
+
+#dragonEnemy {
+    position: absolute;
+    background-image: url(images/BeatEnemy1-1.png);
+    background-size: 100% 100%;
+    width: 40vw;
+    height: 45vh;
+    top: 30%;
+    left: 40%;
+    animation: dragonAnimation .5s linear infinite;
+}
+
+@keyframes dragonAnimation {
+    0% {background-image: url(images/BeatEnemy1-1.png);}
+    50% {background-image: url(images/BeatEnemy1-1.png);}
+    51% {background-image: url(images/BeatEnemy1-2.png);}
+    100% {background-image: url(images/BeatEnemy1-2.png);}
+}

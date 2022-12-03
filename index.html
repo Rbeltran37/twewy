@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TWEWY Mini Game</title>
+</head>
+<body>
+
+    <!-- Start Menu -->
+    <div id="startMenuContainer">
+        <img id="startMenuBackground" src="images/startMenuBackground.png">
+        <img id="shikiText" src="images/shikiText.png" onmouseover="selectShiki()" onmouseleave="deselectShiki()" onclick="setUpMiniGame1()">
+        <img id="selectIcon1" src="images/SelectIcon.png">
+        <img id="selectIcon2" src="images/SelectIcon.png">
+        <img id="selectIcon3" src="images/SelectIcon.png">
+        <img id="selectIcon4" src="images/SelectIcon.png">
+        <img id="selectIcon5" src="images/SelectIcon.png">
+        <img id="selectIcon6" src="images/SelectIcon.png">
+        <img id="joshuaText" src="images/joshuaText.png" onmouseover="selectJoshua()" onmouseleave="deselectJoshua()" onclick="setUpMiniGame2()">
+        <img id="beatText" src="images/beatText.png" onmouseover="selectBeat()" onmouseleave="deselectBeat()" onclick="setUpMiniGame3()">
+        <div id="shikiMainMenu"></div>
+        <div id="joshuaMainMenu"></div>
+        <div id="beatMainMenu"></div>
+    </div>
+
+    <!-- Mini Game 1 -->
+    <div id="miniGame1">
+        <div id="miniGame1BackgroundContainer">
+            <div id="miniGame1Background">
+                <div id="timer">
+                    <div id="starsContainer">
+                        <div id="leftStars"></div>
+                        <div id="rightStars"></div>
+                    </div>
+                </div>
+                <img id="neku1" src="images/Neku1.png">
+                <img id="neku1Shadow" src="images/neku1shadow.png">
+                <img id="shiki1" src="images/Shiki1.png">
+                <img id="shiki1Shadow" src="images/Shiki1shadow.png">
+            </div>
+        </div>
+        <div id="miniGame1WhiteFlash"></div>
+        <div id="score">
+            <div id="scoreContainer">
+                <div id="scoreInt"></div>
+                <div id="mainDecimal"></div>
+            </div>
+        </div>
+        <div id="scoreOutline">
+            <div id="scoreOutlineContainer">
+                <div id="scoreIntOutline"></div>
+                <div id="scoreDecimalOutline"></div>
+            </div>
+        </div>
+        <div id="shikiMainCardContainer">
+            <div id="innerMainCard">
+                <div id="shikiMainCardBack">
+                    <img id="shikiMainCardBackImg" src="images/shikiMainCardBack.png">
+                </div>
+                <div id="shikiMainCardFront">
+                    <img id="shikiMainCardFrontImg" src="images/circleCard.png">
+                </div>
+            </div>
+        </div>
+        <img id="shikiMainCardBorder" src="images/shikiMainCardBorder1.png">
+        <img id="shikiMainCardBorder2" src="images/shikiMainCardBorder2.png">
+        <img id="shikiMainCardBorder3" src="images/shikiMainCardBorder3.png">
+        <div id="shikiCard1" onclick="selectCard('1')">
+            <div id="innershikiCard1">
+                <div id="shikiCardBack1">
+                    <img id="shikiCardBackImg1" src="images/shikiCardBack.png">
+                </div>
+                <div id="shikiCardFront1">
+                    <img id="shikiCardFrontImg1" src="images/circleCard.png">
+                </div>
+                <div id="shikiCardFrontPreview1">
+                    <img id="shikiCardFrontPreviewImg1" src="images/circleCardPreview.png">
+                </div>
+                <img id="correctCardEffect1-1" src="images/correctCardEffect1.png">
+                <img id="correctCardEffect2-1" src="images/correctCardEffect2.png">
+                <img id="correctCardEffect3-1" src="images/correctCardEffect3.png">
+                <img id="correctCardEffect4-1" src="images/correctCardEffect4.png">
+                <div id="wrongCardEffect1-1"></div>
+                <div id="wrongCardEffect2-1"></div>
+            </div>
+        </div>
+        <div id="shikiCard2" onclick="selectCard('2')">
+            <div id="innershikiCard2">
+                <div id="shikiCardBack2">
+                    <img id="shikiCardBackImg2" src="images/shikiCardBack.png">
+                </div>
+                <div id="shikiCardFront2">
+                    <img id="shikiCardFrontImg2" src="images/circleCard.png">
+                </div>
+                <div id="shikiCardFrontPreview2">
+                    <img id="shikiCardFrontPreviewImg2" src="images/circleCardPreview.png">
+                </div>
+                <img id="correctCardEffect1-2" src="images/correctCardEffect1.png">
+                <img id="correctCardEffect2-2" src="images/correctCardEffect2.png">
+                <img id="correctCardEffect3-2" src="images/correctCardEffect3.png">
+                <img id="correctCardEffect4-2" src="images/correctCardEffect4.png">
+                <div id="wrongCardEffect1-2"></div>
+                <div id="wrongCardEffect2-2"></div>
+            </div>
+        </div>
+        <div id="shikiCard3" onclick="selectCard('3')">
+            <div id="innershikiCard3">
+                <div id="shikiCardBack3">
+                    <img id="shikiCardBackImg3" src="images/shikiCardBack.png">
+                </div>
+                <div id="shikiCardFront3">
+                    <img id="shikiCardFrontImg3" src="images/circleCard.png">
+                </div>
+                <div id="shikiCardFrontPreview3">
+                    <img id="shikiCardFrontPreviewImg3" src="images/circleCardPreview.png">
+                </div>
+                <img id="correctCardEffect1-3" src="images/correctCardEffect1.png">
+                <img id="correctCardEffect2-3" src="images/correctCardEffect2.png">
+                <img id="correctCardEffect3-3" src="images/correctCardEffect3.png">
+                <img id="correctCardEffect4-3" src="images/correctCardEffect4.png">
+                <div id="wrongCardEffect1-3"></div>
+                <div id="wrongCardEffect2-3"></div>
+            </div>
+        </div>
+        <div id="shikiCard4" onclick="selectCard('4')">
+            <div id="innershikiCard4">
+                <div id="shikiCardBack4">
+                    <img id="shikiCardBackImg4" src="images/shikiCardBack.png">
+                </div>
+                <div id="shikiCardFront4">
+                    <img id="shikiCardFrontImg4" src="images/circleCard.png">
+                </div>
+                <div id="shikiCardFrontPreview4">
+                    <img id="shikiCardFrontPreviewImg4" src="images/circleCardPreview.png">
+                </div>
+                <img id="correctCardEffect1-4" src="images/correctCardEffect1.png">
+                <img id="correctCardEffect2-4" src="images/correctCardEffect2.png">
+                <img id="correctCardEffect3-4" src="images/correctCardEffect3.png">
+                <img id="correctCardEffect4-4" src="images/correctCardEffect4.png">
+                <div id="wrongCardEffect1-4"></div>
+                <div id="wrongCardEffect2-4"></div>
+            </div>
+        </div>
+        <div id="shikiCard5" onclick="selectCard('5')">
+            <div id="innershikiCard5">
+                <div id="shikiCardBack5">
+                    <img id="shikiCardBackImg5" src="images/shikiCardBack.png">
+                </div>
+                <div id="shikiCardFront5">
+                    <img id="shikiCardFrontImg5" src="images/circleCard.png">
+                </div>
+                <div id="shikiCardFrontPreview5">
+                    <img id="shikiCardFrontPreviewImg5" src="images/circleCardPreview.png">
+                </div>
+                <img id="correctCardEffect1-5" src="images/correctCardEffect1.png">
+                <img id="correctCardEffect2-5" src="images/correctCardEffect2.png">
+                <img id="correctCardEffect3-5" src="images/correctCardEffect3.png">
+                <img id="correctCardEffect4-5" src="images/correctCardEffect4.png">
+                <div id="wrongCardEffect1-5"></div>
+                <div id="wrongCardEffect2-5"></div>
+            </div>
+        </div>
+        <div id="shikiCard6" onclick="selectCard('6')">
+            <div id="innershikiCard6">
+                <div id="shikiCardBack6">
+                    <img id="shikiCardBackImg6" src="images/shikiCardBack.png">
+                </div>
+                <div id="shikiCardFront6">
+                    <img id="shikiCardFrontImg6" src="images/circleCard.png">
+                </div>
+                <div id="shikiCardFrontPreview6">
+                    <img id="shikiCardFrontPreviewImg6" src="images/circleCardPreview.png">
+                </div>
+                <img id="correctCardEffect1-6" src="images/correctCardEffect1.png">
+                <img id="correctCardEffect2-6" src="images/correctCardEffect2.png">
+                <img id="correctCardEffect3-6" src="images/correctCardEffect3.png">
+                <img id="correctCardEffect4-6" src="images/correctCardEffect4.png">
+                <div id="wrongCardEffect1-6"></div>
+                <div id="wrongCardEffect2-6"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="miniGame1EndingBackgroundContainer">
+        <div id="miniGame1EndingBackground">
+            <div id="miniGame1EndingWhiteFlash"></div>
+            <div id="miniGame1EndingWhiteFlash2"></div>
+            <div id="finalscore">
+                <div id="finalScoreContainer">
+                    <div id="finalScoreInt"></div>
+                    <div id="finalMainDecimal"></div>
+                </div>
+            </div>
+            <div id="catSmall1"></div>
+            <div id="catSmall2"></div>
+            <div id="catSmall3"></div>
+            <div id="catSmall4"></div>
+            <div id="catSmall5"></div>
+            <div id="catSmall6"></div>
+            <div id="blueExplosion1"></div>
+            <div id="blueExplosion2"></div>
+            <div id="blueExplosion3"></div>
+            <div id="blueExplosion4"></div>
+            <img id="catBig" src="images/catBig.png">
+            <img id="wolfEnemy" src="images/wolfEnemy.png">
+        </div>
+    </div>
+
+    <!-- Mini Game 2 -->
+    <div id="miniGame2">
+        <div id="miniGame2BackgroundContainer">
+            <div id="miniGame2Background">
+                <div id="miniGame2BackgroundImage"></div>
+                <div id="timer2">
+                    <div id="starsContainer2">
+                        <div id="leftStars2"></div>
+                        <div id="rightStars2"></div>
+                    </div>
+                </div>
+                <div id="neku2"></div>
+                <div id="joshua"></div>
+                <div id="miniGame2WhiteFlash"></div>
+            </div>
+        </div>
+        <div id="score2">
+            <div id="scoreContainer2">
+                <div id="scoreInt2"></div>
+                <div id="mainDecimal2"></div>
+            </div>
+        </div>
+        <div id="scoreOutline2">
+            <div id="scoreOutlineContainer2">
+                <div id="scoreIntOutline2"></div>
+                <div id="scoreDecimalOutline2"></div>
+            </div>
+        </div>
+        <div id="joshuaCard1" onclick="selectedJoshuaCard(1)">
+            <div id="innerjoshuaCard1">
+                <div id="joshuaCardBack1">
+                    <img id="joshuaCardBackImg1" src="images/JoshuaCardBack.png">
+                </div>
+                <div id="joshuaCardFront1">
+                    <img id="joshuaCardFrontImg1" src="images/1Card.png">
+                </div>
+                <img id="joshuaCorrectCardEffect1-1" src="images/correctCardEffect1.png">
+                <img id="joshuaCorrectCardEffect2-1" src="images/correctCardEffect2.png">
+                <img id="joshuaCorrectCardEffect3-1" src="images/correctCardEffect3.png">
+                <img id="joshuaCorrectCardEffect4-1" src="images/correctCardEffect4.png">
+                <div id="joshuaWrongCardEffect1-1"></div>
+                <div id="joshuaWrongCardEffect2-1"></div>
+            </div>
+        </div>
+        <div id="joshuaCard2" onclick="selectedJoshuaCard(2)">
+            <div id="innerjoshuaCard2">
+                <div id="joshuaCardBack2">
+                    <img id="joshuaCardBackImg2" src="images/JoshuaCardBack.png">
+                </div>
+                <div id="joshuaCardFront2">
+                    <img id="joshuaCardFrontImg2" src="images/2Card.png">
+                </div>
+                <img id="joshuaCorrectCardEffect1-2" src="images/correctCardEffect1.png">
+                <img id="joshuaCorrectCardEffect2-2" src="images/correctCardEffect2.png">
+                <img id="joshuaCorrectCardEffect3-2" src="images/correctCardEffect3.png">
+                <img id="joshuaCorrectCardEffect4-2" src="images/correctCardEffect4.png">
+                <div id="joshuaWrongCardEffect1-2"></div>
+                <div id="joshuaWrongCardEffect2-2"></div>
+            </div>
+        </div>
+        <div id="joshuaCard3" onclick="selectedJoshuaCard(3)">
+            <div id="innerjoshuaCard3">
+                <div id="joshuaCardBack3">
+                    <img id="joshuaCardBackImg3" src="images/JoshuaCardBack.png">
+                </div>
+                <div id="joshuaCardFront3">
+                    <img id="joshuaCardFrontImg3" src="images/3Card.png">
+                </div>
+                <img id="joshuaCorrectCardEffect1-3" src="images/correctCardEffect1.png">
+                <img id="joshuaCorrectCardEffect2-3" src="images/correctCardEffect2.png">
+                <img id="joshuaCorrectCardEffect3-3" src="images/correctCardEffect3.png">
+                <img id="joshuaCorrectCardEffect4-3" src="images/correctCardEffect4.png">
+                <div id="joshuaWrongCardEffect1-3"></div>
+                <div id="joshuaWrongCardEffect2-3"></div>
+            </div>
+        </div>
+        <div id="joshuaCard4" onclick="selectedJoshuaCard(4)">
+            <div id="innerjoshuaCard4">
+                <div id="joshuaCardBack4">
+                    <img id="joshuaCardBackImg4" src="images/JoshuaCardBack.png">
+                </div>
+                <div id="joshuaCardFront4">
+                    <img id="joshuaCardFrontImg4" src="images/3Card.png">
+                </div>
+                <img id="joshuaCorrectCardEffect1-4" src="images/correctCardEffect1.png">
+                <img id="joshuaCorrectCardEffect2-4" src="images/correctCardEffect2.png">
+                <img id="joshuaCorrectCardEffect3-4" src="images/correctCardEffect3.png">
+                <img id="joshuaCorrectCardEffect4-4" src="images/correctCardEffect4.png">
+                <div id="joshuaWrongCardEffect1-4"></div>
+                <div id="joshuaWrongCardEffect2-4"></div>
+            </div>
+        </div>
+        <div id="joshuaCard5" onclick="selectedJoshuaCard(5)">
+            <div id="innerjoshuaCard5">
+                <div id="joshuaCardBack5">
+                    <img id="joshuaCardBackImg5" src="images/JoshuaCardBack.png">
+                </div>
+                <div id="joshuaCardFront5">
+                    <img id="joshuaCardFrontImg5" src="images/3Card.png">
+                </div>
+                <img id="joshuaCorrectCardEffect1-5" src="images/correctCardEffect1.png">
+                <img id="joshuaCorrectCardEffect2-5" src="images/correctCardEffect2.png">
+                <img id="joshuaCorrectCardEffect3-5" src="images/correctCardEffect3.png">
+                <img id="joshuaCorrectCardEffect4-5" src="images/correctCardEffect4.png">
+                <div id="joshuaWrongCardEffect1-5"></div>
+                <div id="joshuaWrongCardEffect2-5"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="miniGame2EndingBackgroundContainer">
+        <div id="miniGame2EndingBackground">
+            <div id="miniGame2EndingWhiteFlash"></div>
+            <div id="miniGame2EndingWhiteFlash2"></div>
+            <div id="joshuaFinalscore">
+                <div id="joshuaFinalScoreContainer">
+                    <div id="joshuaFinalScoreInt"></div>
+                    <div id="joshuaFinalMainDecimal"></div>
+                </div>
+            </div>
+            <div id="flyingJoshua"></div>
+            <div id="joshuaGreenCircle"></div>
+            <div id="nekuGreenCircle"></div>
+            <div id="flyingNeku"></div>
+            <div id="greenStars"></div>
+            <img id="joshuaObject1" src="images/joshuaObject1.png">
+            <img id="joshuaObject1-2" src="images/joshuaObject1.png">
+            <img id="joshuaObject2" src="images/joshuaObject2.png">
+            <img id="joshuaObject3" src="images/joshuaObject3.png">
+            <img id="joshuaObject3-2" src="images/joshuaObject3.png">
+            <img id="joshuaObject4" src="images/joshuaObject4.png">
+            <img id="joshuaObject5" src="images/joshuaObject5.png">
+            <img id="joshuaObject5-1" src="images/joshuaObject5.png">
+            <img id="joshuaObject6" src="images/joshuaObject6.png">
+            <img id="joshuaObject6-1" src="images/joshuaObject6.png">
+            <img id="joshuaObject7" src="images/joshuaObject7.png">
+            <img id="joshuaObject8" src="images/joshuaObject8.png">
+            <img id="joshuaObject9" src="images/joshuaObject9.png">
+            <div id="frog"></div>
+            <div id="frog2"></div>
+            <div id="frog3"></div>
+        </div>
+    </div>
+
+    <!-- Mini Game 3 -->
+    <div id="miniGame3">
+        <div id="miniGame3BackgroundContainer">
+            <div id="miniGame3Background">
+                <div id="miniGame3BackgroundImage"></div>
+                <div id="timer3">
+                    <div id="starsContainer3">
+                        <div id="leftStars3"></div>
+                        <div id="rightStars3"></div>
+                    </div>
+                </div>
+                <div id="miniGame3WhiteFlash"></div>
+                <div id="neku3"></div>
+                <div id="beat"></div>
+            </div>
+        </div>
+        <div id="score3">
+            <div id="scoreContainer3">
+                <div id="scoreInt3"></div>
+                <div id="mainDecimal3"></div>
+            </div>
+        </div>
+        <div id="scoreOutline3">
+            <div id="scoreOutlineContainer3">
+                <div id="scoreIntOutline3"></div>
+                <div id="scoreDecimalOutline3"></div>
+            </div>
+        </div>
+        <div id="beatCard0" onclick="testy(1); takeOutCard(this);">
+            <div id="innerBeatCard0">
+                <div id="beatCardBack0">
+                    <img id="beatCardBackImg0" src="images/beatCardBack.png">
+                </div>
+                <div id="beatCardFront0">
+                    <img id="beatCardFrontImg0" src="images/heartCard.png">
+                </div>
+                <img id="beatCorrectCardEffect1-0" src="images/correctCardEffect1.png">
+                <img id="beatCorrectCardEffect2-0" src="images/correctCardEffect2.png">
+                <img id="beatCorrectCardEffect3-0" src="images/correctCardEffect3.png">
+                <img id="beatCorrectCardEffect4-0" src="images/correctCardEffect4.png">
+            </div>
+        </div>
+        <div id="beatCard1" onclick="testy(1); takeOutCard(this);">
+            <div id="innerBeatCard1">
+                <div id="beatCardBack1">
+                    <img id="beatCardBackImg1" src="images/beatCardBack.png">
+                </div>
+                <div id="beatCardFront1">
+                    <img id="beatCardFrontImg1" src="images/heartCard.png">
+                </div>
+                <img id="beatCorrectCardEffect1-1" src="images/correctCardEffect1.png">
+                <img id="beatCorrectCardEffect2-1" src="images/correctCardEffect2.png">
+                <img id="beatCorrectCardEffect3-1" src="images/correctCardEffect3.png">
+                <img id="beatCorrectCardEffect4-1" src="images/correctCardEffect4.png">
+            </div>
+        </div>
+        <div id="beatCard2" onclick="testy(2); takeOutCard(this);">
+            <div id="innerBeatCard2">
+                <div id="beatCardBack2">
+                    <img id="beatCardBackImg2" src="images/beatCardBack.png">
+                </div>
+                <div id="beatCardFront2">
+                    <img id="beatCardFrontImg2" src="images/heartCard.png">
+                </div>
+                <img id="beatCorrectCardEffect1-2" src="images/correctCardEffect1.png">
+                <img id="beatCorrectCardEffect2-2" src="images/correctCardEffect2.png">
+                <img id="beatCorrectCardEffect3-2" src="images/correctCardEffect3.png">
+                <img id="beatCorrectCardEffect4-2" src="images/correctCardEffect4.png">
+            </div>
+        </div>
+        <div id="beatCard3" onclick="testy(3); takeOutCard(this);">
+            <div id="innerBeatCard3">
+                <div id="beatCardBack3">
+                    <img id="beatCardBackImg3" src="images/beatCardBack.png">
+                </div>
+                <div id="beatCardFront3">
+                    <img id="beatCardFrontImg3" src="images/heartCard.png">
+                </div>
+                <img id="beatCorrectCardEffect1-3" src="images/correctCardEffect1.png">
+                <img id="beatCorrectCardEffect2-3" src="images/correctCardEffect2.png">
+                <img id="beatCorrectCardEffect3-3" src="images/correctCardEffect3.png">
+                <img id="beatCorrectCardEffect4-3" src="images/correctCardEffect4.png">
+            </div>
+        </div>
+        <div id="beatCard4" onclick="testy(4); takeOutCard(this);">
+            <div id="innerBeatCard4">
+                <div id="beatCardBack4">
+                    <img id="beatCardBackImg4" src="images/beatCardBack.png">
+                </div>
+                <div id="beatCardFront4">
+                    <img id="beatCardFrontImg4" src="images/heartCard.png">
+                </div>
+                <img id="beatCorrectCardEffect1-4" src="images/correctCardEffect1.png">
+                <img id="beatCorrectCardEffect2-4" src="images/correctCardEffect2.png">
+                <img id="beatCorrectCardEffect3-4" src="images/correctCardEffect3.png">
+                <img id="beatCorrectCardEffect4-4" src="images/correctCardEffect4.png">
+            </div>
+        </div>
+        <div id="beatCard5" onclick="testy(5); takeOutCard(this);">
+            <div id="innerBeatCard5">
+                <div id="beatCardBack5">
+                    <img id="beatCardBackImg5" src="images/beatCardBack.png">
+                </div>
+                <div id="beatCardFront5">
+                    <img id="beatCardFrontImg5" src="images/heartCard.png">
+                </div>
+                <img id="beatCorrectCardEffect1-5" src="images/correctCardEffect1.png">
+                <img id="beatCorrectCardEffect2-5" src="images/correctCardEffect2.png">
+                <img id="beatCorrectCardEffect3-5" src="images/correctCardEffect3.png">
+                <img id="beatCorrectCardEffect4-5" src="images/correctCardEffect4.png">
+            </div>
+        </div>
+        <div id="beatCard6" onclick="testy(6); takeOutCard(this);">
+            <div id="innerBeatCard6">
+                <div id="beatCardBack6">
+                    <img id="beatCardBackImg6" src="images/beatCardBack.png">
+                </div>
+                <div id="beatCardFront6">
+                    <img id="beatCardFrontImg6" src="images/heartCard.png">
+                </div>
+                <img id="beatCorrectCardEffect1-6" src="images/correctCardEffect1.png">
+                <img id="beatCorrectCardEffect2-6" src="images/correctCardEffect2.png">
+                <img id="beatCorrectCardEffect3-6" src="images/correctCardEffect3.png">
+                <img id="beatCorrectCardEffect4-6" src="images/correctCardEffect4.png">
+            </div>
+        </div>
+        <div id="beatCard7" onclick="testy(7); takeOutCard(this);">
+            <div id="innerBeatCard7">
+                <div id="beatCardBack7">
+                    <img id="beatCardBackImg7" src="images/beatCardBack.png">
+                </div>
+                <div id="beatCardFront7">
+                    <img id="beatCardFrontImg7" src="images/heartCard.png">
+                </div>
+                <img id="beatCorrectCardEffect1-7" src="images/correctCardEffect1.png">
+                <img id="beatCorrectCardEffect2-7" src="images/correctCardEffect2.png">
+                <img id="beatCorrectCardEffect3-7" src="images/correctCardEffect3.png">
+                <img id="beatCorrectCardEffect4-7" src="images/correctCardEffect4.png">
+            </div>
+        </div>
+        <div id="beatCard8" onclick="testy(8); takeOutCard(this);">
+            <div id="innerBeatCard8">
+                <div id="beatCardBack8">
+                    <img id="beatCardBackImg8" src="images/beatCardBack.png">
+                </div>
+                <div id="beatCardFront8">
+                    <img id="beatCardFrontImg8" src="images/heartCard.png">
+                </div>
+                <img id="beatCorrectCardEffect1-8" src="images/correctCardEffect1.png">
+                <img id="beatCorrectCardEffect2-8" src="images/correctCardEffect2.png">
+                <img id="beatCorrectCardEffect3-8" src="images/correctCardEffect3.png">
+                <img id="beatCorrectCardEffect4-8" src="images/correctCardEffect4.png">
+            </div>
+        </div>
+        <div id="beatCard9" onclick="testy(9); takeOutCard(this);">
+            <div id="innerBeatCard9">
+                <div id="beatCardBack9">
+                    <img id="beatCardBackImg9" src="images/beatCardBack.png">
+                </div>
+                <div id="beatCardFront9">
+                    <img id="beatCardFrontImg9" src="images/heartCard.png">
+                </div>
+                <img id="beatCorrectCardEffect1-9" src="images/correctCardEffect1.png">
+                <img id="beatCorrectCardEffect2-9" src="images/correctCardEffect2.png">
+                <img id="beatCorrectCardEffect3-9" src="images/correctCardEffect3.png">
+                <img id="beatCorrectCardEffect4-9" src="images/correctCardEffect4.png">
+            </div>
+        </div>
+        <div id="beatCard10" onclick="testy(10); takeOutCard(this);">
+            <div id="innerBeatCard10">
+                <div id="beatCardBack10">
+                    <img id="beatCardBackImg10" src="images/beatCardBack.png">
+                </div>
+                <div id="beatCardFront10">
+                    <img id="beatCardFrontImg10" src="images/heartCard.png">
+                </div>
+                <img id="beatCorrectCardEffect1-10" src="images/correctCardEffect1.png">
+                <img id="beatCorrectCardEffect2-10" src="images/correctCardEffect2.png">
+                <img id="beatCorrectCardEffect3-10" src="images/correctCardEffect3.png">
+                <img id="beatCorrectCardEffect4-10" src="images/correctCardEffect4.png">
+            </div>
+        </div>
+        <div id="beatCard11" onclick="testy(11); takeOutCard(this);">
+            <div id="innerBeatCard11">
+                <div id="beatCardBack11">
+                    <img id="beatCardBackImg11" src="images/beatCardBack.png">
+                </div>
+                <div id="beatCardFront11">
+                    <img id="beatCardFrontImg11" src="images/heartCard.png">
+                </div>
+                <img id="beatCorrectCardEffect1-11" src="images/correctCardEffect1.png">
+                <img id="beatCorrectCardEffect2-11" src="images/correctCardEffect2.png">
+                <img id="beatCorrectCardEffect3-11" src="images/correctCardEffect3.png">
+                <img id="beatCorrectCardEffect4-11" src="images/correctCardEffect4.png">
+            </div>
+        </div>
+        <div id="beatCard12" onclick="testy(12); takeOutCard(this);">
+            <div id="innerBeatCard12">
+                <div id="beatCardBack12">
+                    <img id="beatCardBackImg12" src="images/beatCardBack.png">
+                </div>
+                <div id="beatCardFront12">
+                    <img id="beatCardFrontImg12" src="images/heartCard.png">
+                </div>
+                <img id="beatCorrectCardEffect1-12" src="images/correctCardEffect1.png">
+                <img id="beatCorrectCardEffect2-12" src="images/correctCardEffect2.png">
+                <img id="beatCorrectCardEffect3-12" src="images/correctCardEffect3.png">
+                <img id="beatCorrectCardEffect4-12" src="images/correctCardEffect4.png">
+            </div>
+        </div>
+        <div id="beatCard13" onclick="testy(13); takeOutCard(this);">
+            <div id="innerBeatCard13">
+                <div id="beatCardBack13">
+                    <img id="beatCardBackImg13" src="images/beatCardBack.png">
+                </div>
+                <div id="beatCardFront13">
+                    <img id="beatCardFrontImg13" src="images/heartCard.png">
+                </div>
+                <img id="beatCorrectCardEffect1-13" src="images/correctCardEffect1.png">
+                <img id="beatCorrectCardEffect2-13" src="images/correctCardEffect2.png">
+                <img id="beatCorrectCardEffect3-13" src="images/correctCardEffect3.png">
+                <img id="beatCorrectCardEffect4-13" src="images/correctCardEffect4.png">
+            </div>
+        </div>
+        <div id="beatCard14" onclick="testy(14); takeOutCard(this);">
+            <div id="innerBeatCard14">
+                <div id="beatCardBack14">
+                    <img id="beatCardBackImg14" src="images/beatCardBack.png">
+                </div>
+                <div id="beatCardFront14">
+                    <img id="beatCardFrontImg14" src="images/heartCard.png">
+                </div>
+                <img id="beatCorrectCardEffect1-14" src="images/correctCardEffect1.png">
+                <img id="beatCorrectCardEffect2-14" src="images/correctCardEffect2.png">
+                <img id="beatCorrectCardEffect3-14" src="images/correctCardEffect3.png">
+                <img id="beatCorrectCardEffect4-14" src="images/correctCardEffect4.png">
+            </div>
+        </div>
+        <div id="beatCard15" onclick="testy(15); takeOutCard(this);">
+            <div id="innerBeatCard15">
+                <div id="beatCardBack15">
+                    <img id="beatCardBackImg15" src="images/beatCardBack.png">
+                </div>
+                <div id="beatCardFront15">
+                    <img id="beatCardFrontImg15" src="images/heartCard.png">
+                </div>
+                <img id="beatCorrectCardEffect1-15" src="images/correctCardEffect1.png">
+                <img id="beatCorrectCardEffect2-15" src="images/correctCardEffect2.png">
+                <img id="beatCorrectCardEffect3-15" src="images/correctCardEffect3.png">
+                <img id="beatCorrectCardEffect4-15" src="images/correctCardEffect4.png">
+            </div>
+        </div>
+    </div>
+
+    <div id="miniGame3EndingBackgroundContainer">
+        <div id="miniGame3EndingBackground">
+            <div id="miniGame3EndingWhiteFlash"></div>
+            <div id="miniGame3EndingWhiteFlash3"></div>
+            <div id="beatFinalscore">
+                <div id="beatFinalScoreContainer">
+                    <div id="beatFinalScoreInt"></div>
+                    <div id="beatFinalMainDecimal"></div>
+                </div>
+            </div>
+            <img id="beatChain1" src="images/beatChain.png">
+            <img id="beatChain2" src="images/beatChain.png">
+            <img id="beatChain3" src="images/beatChain.png">
+            <img id="beatChain4" src="images/beatChain.png">
+            <div id="dragonEnemy"></div>
+            <div id="skateNeku1">
+                <div id="skateNeku1Container">
+                    <div id="skateNekuEffect1"></div>
+                </div>
+            </div>
+            <div id="skateNeku2">
+                <div id="skateNeku2Container">
+                    <div id="skateNekuEffect2"></div>
+                </div>
+            </div>
+            <div id="skateBeat1">
+                <div id="skateBeat1Container">
+                    <div id="skateBeatEffect1"></div>
+                </div>
+            </div>
+            <div id="skateBeat2">
+                <div id="skateBeat2Container">
+                    <div id="skateBeatEffect2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
