@@ -30,6 +30,7 @@ body, html {
     height: 6vh;
     top: 50%;
     left: 4%;
+    cursor: pointer;
 }
 
 #joshuaText {
@@ -38,6 +39,7 @@ body, html {
     height: 6vh;
     top: 50%;
     left: 16%;
+    cursor: pointer;
 }
 
 #beatText {
@@ -46,6 +48,7 @@ body, html {
     height: 6vh;
     top: 50%;
     left: 32%;
+    cursor: pointer;
 }
 
 #miniGame1WhiteFlash {
@@ -499,6 +502,7 @@ body, html {
     height: 100%;
     perspective: 1000px;
     animation: moveCardCircleMotion 2s linear infinite;
+    cursor: pointer;
 }
 
 #shikiCardBack1, #shikiCardBack2, #shikiCardBack3, #shikiCardBack4, #shikiCardBack5, #shikiCardBack6, #joshuaCardBack1, #joshuaCardBack2, #joshuaCardBack3, #joshuaCardBack4, #joshuaCardBack5 {
@@ -1883,6 +1887,7 @@ body, html {
     top: 25%;
     right: -12.5vw;
     z-index: 3;
+    cursor: pointer;
 }
 
 #beatCard1 {
@@ -1892,6 +1897,7 @@ body, html {
     top: 25%;
     right: -5vw;
     z-index: 3;
+    cursor: pointer;
 }
 
 #beatCard2 {
@@ -1901,6 +1907,7 @@ body, html {
     top: 25%;
     right: 2.5vw;
     z-index: 3;
+    cursor: pointer;
 }
 
 #beatCard3 {
@@ -1910,6 +1917,7 @@ body, html {
     top: 25%;
     right: 10vw;
     z-index: 3;
+    cursor: pointer;
 }
 
 #beatCard4 {
@@ -1919,6 +1927,7 @@ body, html {
     top: 25%;
     right: 17.5vw;
     z-index: 3;
+    cursor: pointer;
 }
 
 #beatCard5 {
@@ -1928,6 +1937,7 @@ body, html {
     top: 25%;
     right: 25vw;
     z-index: 3;
+    cursor: pointer;
 }
 
 #beatCard6 {
@@ -1937,6 +1947,7 @@ body, html {
     top: 25%;
     right: 32.5vw;
     z-index: 3;
+    cursor: pointer;
 }
 
 #beatCard7 {
@@ -1946,6 +1957,7 @@ body, html {
     top: 25%;
     right: 40vw;
     z-index: 3;
+    cursor: pointer;
 }
 
 #beatCard8 {
@@ -1955,6 +1967,7 @@ body, html {
     top: 25%;
     right: 47.5vw;
     z-index: 3;
+    cursor: pointer;
 }
 
 #beatCard9 {
@@ -1964,6 +1977,7 @@ body, html {
     top: 25%;
     right: 55vw;
     z-index: 3;
+    cursor: pointer;
 }
 
 #beatCard10 {
@@ -1973,6 +1987,7 @@ body, html {
     top: 25%;
     right: 62.5vw;
     z-index: 3;
+    cursor: pointer;
 }
 
 #beatCard11 {
@@ -1982,6 +1997,7 @@ body, html {
     top: 25%;
     right: 70vw;
     z-index: 3;
+    cursor: pointer;
 }
 
 #beatCard12 {
@@ -1991,6 +2007,7 @@ body, html {
     top: 25%;
     right: 77.5vw;
     z-index: 3;
+    cursor: pointer;
 }
 
 #beatCard13 {
@@ -2000,6 +2017,7 @@ body, html {
     top: 25%;
     right: 85vw;
     z-index: 3;
+    cursor: pointer;
 }
 
 #beatCard14 {
@@ -2009,6 +2027,7 @@ body, html {
     top: 25%;
     right: 92.5vw;
     z-index: 3;
+    cursor: pointer;
 }
 
 #beatCard15 {
@@ -2018,6 +2037,7 @@ body, html {
     top: 25%;
     right: 100vw;
     z-index: 3;
+    cursor: pointer;
 }
 
 #innerBeatCard0, #innerBeatCard1 , #innerBeatCard2 , #innerBeatCard3 , #innerBeatCard4 , #innerBeatCard5 , #innerBeatCard6 , #innerBeatCard7 , #innerBeatCard8 , #innerBeatCard9 , #innerBeatCard10 , #innerBeatCard11, #innerBeatCard12, #innerBeatCard13, #innerBeatCard14, #innerBeatCard15 {
